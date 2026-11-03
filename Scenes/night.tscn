@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://vffo5m0ipfie"]
+
+[node name="Night" type="Node2D" unique_id=96747280]
+
+[node name="Map" type="Node2D" parent="." unique_id=533463417]
+
+[node name="Background" type="TileMapLayer" parent="Map" unique_id=2090902437]
+
+[node name="Decorations" type="TileMapLayer" parent="Map" unique_id=640230540]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1171606268]
+position = Vector2(4, 85)
+
+[node name="Player Collision" type="CollisionShape2D" parent="Player" unique_id=1348939472]
+
+[node name="Player Sprite" type="Sprite2D" parent="Player" unique_id=2073896314]
+
+[node name="Enemy Spawner" type="Node2D" parent="." unique_id=142050909]
+
+[node name="Spawner Timer" type="Timer" parent="Enemy Spawner" unique_id=1138278681]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=692554269]

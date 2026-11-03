@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://0i2uv62r1u3t"]
+
+[node name="Rat" type="CharacterBody2D" unique_id=778856118]
+
+[node name="Rat Sprite" type="Sprite2D" parent="." unique_id=509119856]
+
+[node name="Rat Collision" type="CollisionShape2D" parent="." unique_id=1146654164]
+
+[node name="Detection Area" type="Area2D" parent="." unique_id=1165488457]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area" unique_id=1881748910]

@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://c2yirxk68ln7q"]
+
+[node name="Day" type="Node2D" unique_id=419098203]
+
+[node name="Map" type="Node2D" parent="." unique_id=1468528695]
+
+[node name="Background" type="TileMapLayer" parent="Map" unique_id=2136143107]
+
+[node name="Decorations" type="TileMapLayer" parent="Map" unique_id=978849645]
+
+[node name="Farm Plots" type="Node2D" parent="Map" unique_id=1216957631]
+
+[node name="Plot 1" type="Node2D" parent="Map/Farm Plots" unique_id=583378205]
+
+[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 1" unique_id=1240879204]
+
+[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 1" unique_id=2009749981]
+
+[node name="Plot 2" type="Node2D" parent="Map/Farm Plots" unique_id=658089778]
+
+[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 2" unique_id=633865750]
+
+[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 2" unique_id=108529982]
+
+[node name="Plot 3" type="Node2D" parent="Map/Farm Plots" unique_id=1705868044]
+
+[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 3" unique_id=891639149]
+
+[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 3" unique_id=546301667]
+
+[node name="Plot 4" type="Node2D" parent="Map/Farm Plots" unique_id=1059053097]
+
+[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 4" unique_id=261962174]
+
+[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 4" unique_id=318332068]
+
+[node name="Plot 5" type="Node2D" parent="Map/Farm Plots" unique_id=580710511]
+
+[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 5" unique_id=1727210480]
+
+[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 5" unique_id=753495840]
+
+[node name="Plot 6" type="Node2D" parent="Map/Farm Plots" unique_id=1305663610]
+
+[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 6" unique_id=861932012]
+
+[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 6" unique_id=239504400]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1201372838]
+
+[node name="Shop" type="PanelContainer" parent="UI" unique_id=1448166833]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Shop List" type="VBoxContainer" parent="UI/Shop" unique_id=1487682686]
+layout_mode = 2
+
+[node name="Top Bar" type="PanelContainer" parent="UI" unique_id=1650521089]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bar List" type="HBoxContainer" parent="UI/Top Bar" unique_id=937368691]
+layout_mode = 2
+
+[node name="Money Label" type="Label" parent="UI/Top Bar/Bar List" unique_id=883348987]
+layout_mode = 2
+
+[node name="Time Label" type="Label" parent="UI/Top Bar/Bar List" unique_id=1150704628]
+layout_mode = 2
+
+[node name="Phase Label" type="Label" parent="UI/Top Bar/Bar List" unique_id=1005616671]
+layout_mode = 2
+
+[node name="Prompt Bar" type="PanelContainer" parent="UI" unique_id=1247134983]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Prompt" type="Label" parent="UI/Prompt Bar" unique_id=1993687221]
+layout_mode = 2
+
+[node name="Planting Minigame" type="PanelContainer" parent="UI" unique_id=411542099]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Contents" type="Control" parent="UI/Planting Minigame" unique_id=1916073817]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/Planting Minigame/Contents" unique_id=1273958112]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Bar" type="ColorRect" parent="UI/Planting Minigame/Contents" unique_id=738572130]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Target" type="ColorRect" parent="UI/Planting Minigame/Contents/Bar" unique_id=1168283198]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cursor" type="ColorRect" parent="UI/Planting Minigame/Contents/Bar" unique_id=1270124584]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fishing Minigame" type="PanelContainer" parent="UI" unique_id=1806056886]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Contents" type="Control" parent="UI/Fishing Minigame" unique_id=365193753]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/Fishing Minigame/Contents" unique_id=454171023]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Background" type="TextureRect" parent="UI/Fishing Minigame/Contents" unique_id=618396759]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Shadow" type="Sprite2D" parent="UI/Fishing Minigame/Contents/Background" unique_id=659406001]
+
+[node name="Bobber" type="Sprite2D" parent="UI/Fishing Minigame/Contents/Background" unique_id=34577300]
+
+[node name="Inventory" type="PanelContainer" parent="UI" unique_id=129611976]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Contents" type="Control" parent="UI/Inventory" unique_id=425721290]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/Inventory/Contents" unique_id=1954763746]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Inventory Panels" type="HBoxContainer" parent="UI/Inventory/Contents" unique_id=1901849039]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory Rows" type="VBoxContainer" parent="UI/Inventory/Contents/Inventory Panels" unique_id=949666204]
+layout_mode = 2
+
+[node name="Inventory Item View" type="VBoxContainer" parent="UI/Inventory/Contents/Inventory Panels" unique_id=729485893]
+layout_mode = 2
+
+[node name="Item Image" type="TextureRect" parent="UI/Inventory/Contents/Inventory Panels/Inventory Item View" unique_id=1477260362]
+layout_mode = 2
+
+[node name="Item Name" type="Label" parent="UI/Inventory/Contents/Inventory Panels/Inventory Item View" unique_id=402929443]
+layout_mode = 2
+
+[node name="Item Amount" type="Label" parent="UI/Inventory/Contents/Inventory Panels/Inventory Item View" unique_id=480132817]
+layout_mode = 2
+
+[node name="Item Value" type="Label" parent="UI/Inventory/Contents/Inventory Panels/Inventory Item View" unique_id=1828746237]
+layout_mode = 2
+
+[node name="Sell Item" type="Button" parent="UI/Inventory/Contents/Inventory Panels/Inventory Item View" unique_id=1513082418]
+layout_mode = 2
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=971847733]
+position = Vector2(4, 85)
+
+[node name="Player Collision" type="CollisionShape2D" parent="Player" unique_id=899559284]
+
+[node name="Player Sprite" type="Sprite2D" parent="Player" unique_id=1297459562]

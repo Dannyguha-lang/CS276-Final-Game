@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d1a3ia5ovk0x0"]
+
+[node name="Ladybug" type="CharacterBody2D" unique_id=778856118]
+
+[node name="Ladybug Sprite" type="Sprite2D" parent="." unique_id=509119856]
+
+[node name="Ladybug Collision" type="CollisionShape2D" parent="." unique_id=1146654164]
+
+[node name="Detection Area" type="Area2D" parent="." unique_id=1165488457]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area" unique_id=1881748910]
