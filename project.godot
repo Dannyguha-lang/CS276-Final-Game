@@ -14,6 +14,10 @@ config/name="CS276 Final Game"
 run/main_scene="uid://cy4myb65rp3ek"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
+[autoload]
+
+Global="*uid://c1iht4blocop4"
+
 [display]
 
 window/size/viewport_width=1536
