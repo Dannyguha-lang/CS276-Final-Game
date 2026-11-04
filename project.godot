@@ -16,7 +16,8 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
 
-Global="*uid://c1iht4blocop4"
+Inventory="*uid://c1iht4blocop4"
+GlobalPlayer="*uid://clu3bbbxck5c"
 
 [display]
 
