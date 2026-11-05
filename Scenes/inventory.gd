@@ -1,43 +1,64 @@
 extends PanelContainer
 
-
 @onready var itemView = $InventoryPanels/InventoryItemView
-@onready var row = $InventoryPanels/InventoryRows/InventoryRow1
+@onready var rows = $InventoryPanels/InventoryRows
 @onready var main = get_parent().get_parent()
 
+@export var row_width = 4
 var currentItem = "None"
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
-		buildInventory()
+		buildInventory("seed")
 		toggleInventory()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
 	itemView.changeItem("None","None","None","None")
-	var labels = ["Corn","Corn Seeds","Chilli","Corn Seeds"]
-	var x = 0
-	for child in row.get_children():
-		var icon = child.get_child(0)
-		var label = child.get_child(1)
-		var amount = child.get_child(2)
-		label.text = labels[x]
-		x+=1
-		amount.text = "0"
-		child.pressed.connect(func(): 
-			itemView.changeItem(label.text, icon.texture, amount.text, 1))
-	pass # Replace with function body.
 
 func toggleInventory():
 	visible = not visible
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
-func buildInventory():
-	var values = [main.corn_ammo,main.corn_seeds,main.chili_ammo,main.chili_seeds]
+func buildInventory(type:String):
+	for row in rows.get_children():
+		row.queue_free()
+	var values
+	var images
+	match type:
+		"seed":
+			values = Inventory.seeds
+			images = Inventory.seed_images
+			pass
+		"ammo":
+			values = Inventory.ammo
+			images = Inventory.ammo_images
+			pass
+		"weapons":
+			values = Inventory.weapons
+			pass		
+	var row
 	var x = 0
-	for child in row.get_children():
-		var label = child.get_child(2)
-		label.text = str(values[x])
-		x += 1
+	for k in values:
+		if x % row_width == 0:
+			rows.add_child(row)
+			row = HBoxContainer.new()
+			
+		var button = Button.new()
+		var image = TextureRect.new()
+		var text = Label.new()
+		var amount = Label.new()
+		var box = VBoxContainer.new()
+		
+		image.texture = load(images[k])
+		text.text = k
+		amount.text = str(values[k])
+		button.pressed.connect(func(): itemView.changeItem(text.text, image.texture, amount.text, 1))
+		box.add_child(image)
+		box.add_child(text)
+		box.add_child(amount)
+		button.add_child(box)
+		button.custom_minimum_size = Vector2(96, 96)
+		row.add_child(button)
+		
+		x +=1
+	

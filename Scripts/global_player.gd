@@ -8,7 +8,12 @@ var equipped_weapon = "None"
 # Called when the node enters the scene tree for the first time.
 func takeDamage(num:int):
 	current_health -= num
-	
+
+func increaseBattleStat(stat:String,amount:int)-> bool:
+	if stat in battle_stats:
+		battle_stats[stat] += 1
+		return true
+	return false
 
 func _ready() -> void:
 	pass # Replace with function body.

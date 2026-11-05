@@ -1,10 +1,9 @@
 extends PanelContainer
 
 
-const upgrades:Dictionary = {"Health":{"maxLevel":10,"effect":20,"initialCost":10,"costMult":1.5},"Speed":{"maxLevel":5,"effect":5,"initialCost":50,"costMult":2},"Luck":{"maxLevel":15,"effect":0.01,"initialCost":10,"costMult":1.25},"Regen":{"maxLevel":5,"effect":1,"initialCost":50,"costMult":1.5}}
-var current_levels:Dictionary = {"Health":0,"Speed":0,"Luck":0,"Regen":0,}
+const upgrades:Dictionary = {"Max Health":{"maxLevel":10,"effect":20,"initialCost":10,"costMult":1.5},"Speed":{"maxLevel":5,"effect":5,"initialCost":50,"costMult":2},"Luck":{"maxLevel":15,"effect":0.01,"initialCost":10,"costMult":1.25},"Regen":{"maxLevel":5,"effect":1,"initialCost":50,"costMult":1.5}}
+var current_levels:Dictionary = {"Max Health":0,"Speed":0,"Luck":0,"Regen":0,}
 @onready var shop_list = $ShopList
-@onready var player = get_node("../Player")
 @onready var main = get_parent()
 
 # Called when the node enters the scene tree for the first time.
@@ -32,11 +31,7 @@ func buyUpgrade(id):
 	money -= cost
 	main.setCoins(money)
 	current_levels[id] += 1
-	match id:
-		"Health":
-			player.increaseMaxHealth(upgrade["effect"])
-		"Speed":
-			player.increaseSpeed(upgrade["effect"])
+	Player.increaseBattleStat(id,upgrade["effect"])
 	buildShop()
 	return true
 
