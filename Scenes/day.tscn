@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://c2yirxk68ln7q"]
 
+[ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_aactg"]
+[ext_resource type="Script" uid="uid://bs6shsuvm5hrw" path="res://Scenes/shop.gd" id="2_pgbeg"]
+[ext_resource type="Script" uid="uid://dyl8hln4wrh5i" path="res://Scenes/fishing_minigame.gd" id="3_0g6mj"]
+[ext_resource type="Script" uid="uid://b5rrsppvdd34g" path="res://Scenes/inventory.gd" id="4_3fw17"]
+[ext_resource type="Script" uid="uid://dxbm6qk22feaq" path="res://Scenes/inventory_item_view.gd" id="5_pgbeg"]
+
 [node name="Day" type="Node2D" unique_id=419098203]
 
 [node name="Map" type="Node2D" parent="." unique_id=1468528695]
@@ -103,13 +109,17 @@ offset_bottom = 40.0
 custom_minimum_size = Vector2(640, 512)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 444.0
+offset_top = 192.0
+offset_right = 1084.0
+offset_bottom = 704.0
+theme = ExtResource("1_aactg")
 
 [node name="Shop" type="PanelContainer" parent="UI/UI Root" unique_id=1448166833]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 512.0
+script = ExtResource("2_pgbeg")
 
 [node name="Shop List" type="VBoxContainer" parent="UI/UI Root/Shop" unique_id=1487682686]
 layout_mode = 2
@@ -118,6 +128,7 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 512.0
+script = ExtResource("3_0g6mj")
 
 [node name="Title" type="Label" parent="UI/UI Root/Fishing Minigame" unique_id=454171023]
 layout_mode = 2
@@ -133,6 +144,7 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 512.0
+script = ExtResource("4_3fw17")
 
 [node name="Title" type="Label" parent="UI/UI Root/Inventory" unique_id=1954763746]
 layout_mode = 2
@@ -145,6 +157,7 @@ layout_mode = 2
 
 [node name="Inventory Item View" type="VBoxContainer" parent="UI/UI Root/Inventory/Inventory Panels" unique_id=729485893]
 layout_mode = 2
+script = ExtResource("5_pgbeg")
 
 [node name="Item Image" type="TextureRect" parent="UI/UI Root/Inventory/Inventory Panels/Inventory Item View" unique_id=1477260362]
 layout_mode = 2
@@ -167,3 +180,17 @@ position = Vector2(4, 85)
 [node name="Player Collision" type="CollisionShape2D" parent="Player" unique_id=899559284]
 
 [node name="Player Sprite" type="Sprite2D" parent="Player" unique_id=1297459562]
+
+[node name="Fisherman" type="CharacterBody2D" parent="." unique_id=1977656258]
+position = Vector2(8, 170)
+
+[node name="Fisherman Collision" type="CollisionShape2D" parent="Fisherman" unique_id=1396862073]
+
+[node name="Fisherman Sprite" type="Sprite2D" parent="Fisherman" unique_id=1115511551]
+
+[node name="Shopkeeper" type="CharacterBody2D" parent="." unique_id=1690293496]
+position = Vector2(4, 85)
+
+[node name="Shopkeeper Collision" type="CollisionShape2D" parent="Shopkeeper" unique_id=1047059068]
+
+[node name="Shopkeeper Sprite" type="Sprite2D" parent="Shopkeeper" unique_id=672805239]
