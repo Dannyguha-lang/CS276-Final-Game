@@ -4,7 +4,6 @@ extends PanelContainer
 const upgrades:Dictionary = {"Max Health":{"maxLevel":10,"effect":20,"initialCost":10,"costMult":1.5},"Speed":{"maxLevel":5,"effect":5,"initialCost":50,"costMult":2},"Luck":{"maxLevel":15,"effect":0.01,"initialCost":10,"costMult":1.25},"Regen":{"maxLevel":5,"effect":1,"initialCost":50,"costMult":1.5}}
 var current_levels:Dictionary = {"Max Health":0,"Speed":0,"Luck":0,"Regen":0,}
 @onready var shop_list = $ShopList
-@onready var main = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,7 +17,7 @@ func openShop():
 	show()
 
 func buyUpgrade(id):
-	var money = main.getCoins()
+	var money = Inventory.getCoins()
 	print(id)
 	if id not in upgrades:
 		return false
@@ -28,8 +27,7 @@ func buyUpgrade(id):
 	var cost = upgrade["initialCost"] + (upgrade["initialCost"] * upgrade["costMult"] * current_levels[id])
 	if money <= cost :
 		return false
-	money -= cost
-	main.setCoins(money)
+	Inventory.updateCoins(cost * -1)
 	current_levels[id] += 1
 	Player.increaseBattleStat(id,upgrade["effect"])
 	buildShop()
