@@ -128,21 +128,27 @@ script = ExtResource("2_3fw17")
 [node name="ShopList" type="VBoxContainer" parent="UI/UIRoot/Shop" unique_id=1487682686]
 layout_mode = 2
 
-[node name="Fishing Minigame" type="PanelContainer" parent="UI/UIRoot" unique_id=1806056886]
+[node name="FishingMinigame" type="PanelContainer" parent="UI/UIRoot" unique_id=1806056886]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 512.0
 script = ExtResource("3_3fw17")
 
-[node name="Title" type="Label" parent="UI/UIRoot/Fishing Minigame" unique_id=454171023]
+[node name="Title" type="Label" parent="UI/UIRoot/FishingMinigame" unique_id=454171023]
 layout_mode = 2
 
-[node name="Background" type="TextureRect" parent="UI/UIRoot/Fishing Minigame" unique_id=618396759]
+[node name="Background" type="TextureRect" parent="UI/UIRoot/FishingMinigame" unique_id=618396759]
 layout_mode = 2
 
-[node name="Shadow" type="Sprite2D" parent="UI/UIRoot/Fishing Minigame/Background" unique_id=659406001]
+[node name="Shadow" type="Sprite2D" parent="UI/UIRoot/FishingMinigame/Background" unique_id=659406001]
 
-[node name="Bobber" type="Sprite2D" parent="UI/UIRoot/Fishing Minigame/Background" unique_id=34577300]
+[node name="Bobber" type="Sprite2D" parent="UI/UIRoot/FishingMinigame/Background" unique_id=34577300]
+
+[node name="ResultContainer" type="PanelContainer" parent="UI/UIRoot/FishingMinigame" unique_id=1299947524]
+layout_mode = 2
+
+[node name="Result" type="Label" parent="UI/UIRoot/FishingMinigame/ResultContainer" unique_id=1299240638]
+layout_mode = 2
 
 [node name="Inventory" type="PanelContainer" parent="UI/UIRoot" unique_id=129611976]
 custom_minimum_size = Vector2(640, 512)
@@ -151,32 +157,39 @@ offset_right = 640.0
 offset_bottom = 512.0
 script = ExtResource("4_3fw17")
 
-[node name="Title" type="Label" parent="UI/UIRoot/Inventory" unique_id=1954763746]
+[node name="InventoryContainer" type="VBoxContainer" parent="UI/UIRoot/Inventory" unique_id=1099078292]
 layout_mode = 2
 
-[node name="InventoryPanels" type="HBoxContainer" parent="UI/UIRoot/Inventory" unique_id=1901849039]
+[node name="Title" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=1954763746]
+layout_mode = 2
+text = "Inventory"
+
+[node name="InventoryButtons" type="HBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=1638058432]
 layout_mode = 2
 
-[node name="InventoryRows" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryPanels" unique_id=949666204]
+[node name="InventoryPanels" type="HBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=1901849039]
 layout_mode = 2
 
-[node name="InventoryItemView" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryPanels" unique_id=729485893]
+[node name="InventoryRows" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=949666204]
+layout_mode = 2
+
+[node name="InventoryItemView" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=729485893]
 layout_mode = 2
 script = ExtResource("5_3fw17")
 
-[node name="ItemImage" type="TextureRect" parent="UI/UIRoot/Inventory/InventoryPanels/InventoryItemView" unique_id=1477260362]
+[node name="ItemImage" type="TextureRect" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1477260362]
 layout_mode = 2
 
-[node name="ItemName" type="Label" parent="UI/UIRoot/Inventory/InventoryPanels/InventoryItemView" unique_id=402929443]
+[node name="ItemName" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=402929443]
 layout_mode = 2
 
-[node name="ItemAmount" type="Label" parent="UI/UIRoot/Inventory/InventoryPanels/InventoryItemView" unique_id=480132817]
+[node name="ItemAmount" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=480132817]
 layout_mode = 2
 
-[node name="ItemValue" type="Label" parent="UI/UIRoot/Inventory/InventoryPanels/InventoryItemView" unique_id=1828746237]
+[node name="ItemValue" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1828746237]
 layout_mode = 2
 
-[node name="SellItem" type="Button" parent="UI/UIRoot/Inventory/InventoryPanels/InventoryItemView" unique_id=1513082418]
+[node name="SellItem" type="Button" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1513082418]
 layout_mode = 2
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=971847733]

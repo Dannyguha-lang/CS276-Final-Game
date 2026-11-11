@@ -13,9 +13,9 @@ const weapon_chance = 0.10
 @export var period := 2.5
 @export var radius := Vector2(140, 90)
 @export var freq := Vector2(1, 2)
-@onready var shadow: Sprite2D = $Background/Water/Shadow
-@onready var bobber: Sprite2D = $Background/Water/Bobber
-@onready var water: TextureRect = $Background/Water
+@onready var shadow: Sprite2D = $Background/Shadow
+@onready var bobber: Sprite2D = $Background/Bobber
+@onready var water: TextureRect = $Background
 @onready var result_container:PanelContainer = $ResultContainer
 @onready var result:Label = $ResultContainer/Result
 
@@ -99,11 +99,11 @@ func guess() -> void:
 	shadow.position = target
 	shadow.show()
 	
-	print(dist)
 	var catch = calculateCatch()
 	var rarity = calculateRarity(dist)
 	await get_tree().create_timer(1).timeout
 	shadow.hide()
+	Inventory.addFish(catch,rarity)
 	result.text = "catch: %s \n rarity: %s" % [catch,rarity]
 	result.show()
 	result_container.show()
@@ -118,3 +118,7 @@ func end() -> void:
 func pattern(time:float):
 	var a := time * TAU / period
 	return Vector2(sin(a * freq.x) * radius.x, sin(a * freq.y + 1.0) * radius.y)
+
+func ellipse(time:float,):
+	return Vector2(radius.x * sin(time),radius.y*cos(time))
+	

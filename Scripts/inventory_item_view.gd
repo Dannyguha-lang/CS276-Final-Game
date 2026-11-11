@@ -3,7 +3,7 @@ extends VBoxContainer
 @onready var item_image = $ItemImage
 @onready var item_name = $ItemName
 @onready var item_value = $ItemValue
-@onready var item_sell = $ItemSell
+@onready var item_sell = $SellItem
 var current_item = "None"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

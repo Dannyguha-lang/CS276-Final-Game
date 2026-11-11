@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_28flt"]
 [ext_resource type="TileSet" uid="uid://cbjwsftw33k84" path="res://Tile Sets/Day_Background.tres" id="1_48xlc"]
+[ext_resource type="Script" uid="uid://bqaua8ecgq7gw" path="res://Scenes/menu.gd" id="3_1ehe0"]
 
 [node name="Main Menu" type="Node2D" unique_id=1206387288]
 
@@ -17,6 +18,7 @@ offset_top = 287.0
 offset_right = 864.0
 offset_bottom = 509.0
 theme = ExtResource("1_28flt")
+script = ExtResource("3_1ehe0")
 
 [node name="MarginContainer" type="MarginContainer" parent="Menu" unique_id=619387722]
 layout_mode = 2

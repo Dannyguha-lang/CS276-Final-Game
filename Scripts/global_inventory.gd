@@ -6,7 +6,14 @@ var ammo: Dictionary = {"tomato":0,"cucumber":0,"corn":0,"pumpkin":0,"onion":0,"
 var ammo_images: Dictionary = {"tomato":"res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/01_tomato/tomato_produce_normal.png","cucumber":"res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/02_cucumber/cucumber_produce_normal.png","corn":"res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/04_corn/corn_produce_golden.png","pumpkin":"res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/05_pumpkin/pumpkin_produce_golden.png","onion":"res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/08_onion/onion_produce_normal.png","chilli":"res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/10_red_chili/red_chili_produce_normal.png","radish":"res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/13_purple_radish/purple_radish_produce_normal.png","potato":"res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/14_potato/potato_produce_normal.png","carrot":"res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/17_carrot/carrot_produce_normal.png"}
 var sell_values: Dictionary = {"tomato":10,"cucumber":10,"corn":10,"pumpkin":10,"onion":10,"chilli":10,"radish":10,"potato":10,"carrot":10}
 var weapons:Array = []
+var fish:Array = []
 # Called when the node enters the scene tree for the first time.
+
+func addFish(catch,rarity):
+	if catch == "weapon":
+		weapons.append(rarity)
+	else:
+		fish.append(rarity)
 
 func addSeeds(type:String,number:int) -> bool:
 	if type not in seeds:
