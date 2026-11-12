@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_aactg"]
 [ext_resource type="Script" uid="uid://bs6shsuvm5hrw" path="res://Scripts/shop.gd" id="2_3fw17"]
+[ext_resource type="PackedScene" uid="uid://c5ko81i4sw3dx" path="res://Scenes/farm_plot.tscn" id="2_ouyqe"]
 [ext_resource type="Script" uid="uid://dyl8hln4wrh5i" path="res://Scripts/fishing_minigame.gd" id="3_3fw17"]
 [ext_resource type="Script" uid="uid://b5rrsppvdd34g" path="res://Scripts/inventory.gd" id="4_3fw17"]
 [ext_resource type="Script" uid="uid://dxbm6qk22feaq" path="res://Scripts/inventory_item_view.gd" id="5_3fw17"]
@@ -18,41 +19,23 @@
 
 [node name="Farm Plots" type="Node2D" parent="Map" unique_id=1216957631]
 
-[node name="Plot 1" type="Node2D" parent="Map/Farm Plots" unique_id=583378205]
+[node name="Plot 1" parent="Map/Farm Plots" unique_id=1730238798 instance=ExtResource("2_ouyqe")]
+position = Vector2(180, 150)
 
-[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 1" unique_id=1240879204]
+[node name="Plot 2" parent="Map/Farm Plots" unique_id=385953557 instance=ExtResource("2_ouyqe")]
+position = Vector2(280, 150)
 
-[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 1" unique_id=2009749981]
+[node name="Plot 3" parent="Map/Farm Plots" unique_id=395209728 instance=ExtResource("2_ouyqe")]
+position = Vector2(380, 150)
 
-[node name="Plot 2" type="Node2D" parent="Map/Farm Plots" unique_id=658089778]
+[node name="Plot 4" parent="Map/Farm Plots" unique_id=1830085111 instance=ExtResource("2_ouyqe")]
+position = Vector2(180, 250)
 
-[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 2" unique_id=633865750]
+[node name="Plot 5" parent="Map/Farm Plots" unique_id=1561955485 instance=ExtResource("2_ouyqe")]
+position = Vector2(280, 250)
 
-[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 2" unique_id=108529982]
-
-[node name="Plot 3" type="Node2D" parent="Map/Farm Plots" unique_id=1705868044]
-
-[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 3" unique_id=891639149]
-
-[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 3" unique_id=546301667]
-
-[node name="Plot 4" type="Node2D" parent="Map/Farm Plots" unique_id=1059053097]
-
-[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 4" unique_id=261962174]
-
-[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 4" unique_id=318332068]
-
-[node name="Plot 5" type="Node2D" parent="Map/Farm Plots" unique_id=580710511]
-
-[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 5" unique_id=1727210480]
-
-[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 5" unique_id=753495840]
-
-[node name="Plot 6" type="Node2D" parent="Map/Farm Plots" unique_id=1305663610]
-
-[node name="Soil" type="Sprite2D" parent="Map/Farm Plots/Plot 6" unique_id=861932012]
-
-[node name="Crop" type="Sprite2D" parent="Map/Farm Plots/Plot 6" unique_id=239504400]
+[node name="Plot 6" parent="Map/Farm Plots" unique_id=149185865 instance=ExtResource("2_ouyqe")]
+position = Vector2(380, 250)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1201372838]
 

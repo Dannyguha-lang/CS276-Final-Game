@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c5ko81i4sw3dx"]
+
+[ext_resource type="Script" uid="uid://b6cfjtuten2um" path="res://Scripts/farm_plot.gd" id="1_plc8g"]
+[ext_resource type="Texture2D" uid="uid://blpckyntpcpji" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/soil.png" id="2_fq7d6"]
+
+[node name="FarmPlot" type="Node2D" unique_id=1730238798]
+script = ExtResource("1_plc8g")
+
+[node name="Soil" type="Sprite2D" parent="." unique_id=137974376]
+scale = Vector2(2, 2)
+texture = ExtResource("2_fq7d6")
+
+[node name="Crop" type="Sprite2D" parent="." unique_id=1952879415]
+position = Vector2(0, -9)
+scale = Vector2(1.7, 1.7)
