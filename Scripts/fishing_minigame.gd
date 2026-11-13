@@ -18,7 +18,8 @@ const weapon_chance = 0.10
 @onready var water: TextureRect = $Background
 @onready var result_container:PanelContainer = $ResultContainer
 @onready var result:Label = $ResultContainer/Result
-
+var current_pattern;
+var offset;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
@@ -117,8 +118,7 @@ func end() -> void:
 
 func pattern(time:float):
 	var a := time * TAU / period
-	return Vector2(sin(a * freq.x) * radius.x, sin(a * freq.y + 1.0) * radius.y)
-
-func ellipse(time:float,):
-	return Vector2(radius.x * sin(time),radius.y*cos(time))
 	
+		
+		
+	return Vector2(sin(a * freq.x) * radius.x, sin(a * freq.y + 1.0) * radius.y)

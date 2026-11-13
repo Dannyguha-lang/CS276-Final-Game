@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://vffo5m0ipfie"]
 
+[ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_cfpff"]
+[ext_resource type="Script" uid="uid://b5rrsppvdd34g" path="res://Scripts/inventory.gd" id="2_hndgf"]
+[ext_resource type="Script" uid="uid://dxbm6qk22feaq" path="res://Scripts/inventory_item_view.gd" id="3_jhpr2"]
+
 [node name="Night" type="Node2D" unique_id=96747280]
 
 [node name="Map" type="Node2D" parent="." unique_id=533463417]
@@ -20,3 +24,116 @@ position = Vector2(4, 85)
 [node name="Spawner Timer" type="Timer" parent="Enemy Spawner" unique_id=1138278681]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=692554269]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1383799376]
+
+[node name="Top Bar" type="PanelContainer" parent="UI" unique_id=1254107527]
+custom_minimum_size = Vector2(1536, 96)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bar List" type="HBoxContainer" parent="UI/Top Bar" unique_id=801521391]
+layout_mode = 2
+
+[node name="Money Label" type="Label" parent="UI/Top Bar/Bar List" unique_id=1459209239]
+layout_mode = 2
+
+[node name="Time Label" type="Label" parent="UI/Top Bar/Bar List" unique_id=697540263]
+layout_mode = 2
+
+[node name="Phase Label" type="Label" parent="UI/Top Bar/Bar List" unique_id=1177599100]
+layout_mode = 2
+
+[node name="Prompt Bar" type="PanelContainer" parent="UI" unique_id=522766153]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Prompt" type="Label" parent="UI/Prompt Bar" unique_id=1294073371]
+layout_mode = 2
+
+[node name="UIRoot" type="Control" parent="UI" unique_id=1476584928]
+custom_minimum_size = Vector2(640, 512)
+propagate_maximum_size = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 444.0
+offset_top = 192.0
+offset_right = 1084.0
+offset_bottom = 704.0
+theme = ExtResource("1_cfpff")
+
+[node name="Inventory" type="PanelContainer" parent="UI/UIRoot" unique_id=2111304328]
+custom_minimum_size = Vector2(640, 512)
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 512.0
+script = ExtResource("2_hndgf")
+
+[node name="InventoryContainer" type="VBoxContainer" parent="UI/UIRoot/Inventory" unique_id=834009358]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=1474676394]
+layout_mode = 2
+text = "Inventory"
+
+[node name="InventoryButtons" type="HBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=2112854952]
+layout_mode = 2
+
+[node name="InventoryPanels" type="HBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=15307566]
+layout_mode = 2
+
+[node name="InventoryRows" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=211705350]
+layout_mode = 2
+
+[node name="InventoryItemView" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=1541520751]
+layout_mode = 2
+script = ExtResource("3_jhpr2")
+
+[node name="ItemImage" type="TextureRect" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1501648399]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1684527503]
+layout_mode = 2
+
+[node name="ItemAmount" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1609226739]
+layout_mode = 2
+
+[node name="ItemValue" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1151571312]
+layout_mode = 2
+
+[node name="SellItem" type="Button" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1646030015]
+layout_mode = 2
+
+[node name="SideBar" type="PanelContainer" parent="UI" unique_id=138084858]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SeedButtons" type="VBoxContainer" parent="UI/SideBar" unique_id=1147294014]
+layout_mode = 2
+
+[node name="Tomato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1091988643]
+layout_mode = 2
+
+[node name="Cucumber" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1729654321]
+layout_mode = 2
+
+[node name="Corn" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1027706671]
+layout_mode = 2
+
+[node name="Pumpkin" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1690342841]
+layout_mode = 2
+
+[node name="Onion" type="Button" parent="UI/SideBar/SeedButtons" unique_id=983531960]
+layout_mode = 2
+
+[node name="Chilli" type="Button" parent="UI/SideBar/SeedButtons" unique_id=844733414]
+layout_mode = 2
+
+[node name="Radish" type="Button" parent="UI/SideBar/SeedButtons" unique_id=759348442]
+layout_mode = 2
+
+[node name="Potato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=2101875995]
+layout_mode = 2
+
+[node name="Carrot" type="Button" parent="UI/SideBar/SeedButtons" unique_id=714273773]
+layout_mode = 2

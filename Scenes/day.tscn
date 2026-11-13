@@ -175,6 +175,43 @@ layout_mode = 2
 [node name="SellItem" type="Button" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1513082418]
 layout_mode = 2
 
+[node name="SideBar" type="PanelContainer" parent="UI" unique_id=285383613]
+custom_minimum_size = Vector2(100, 600)
+offset_left = 1394.0
+offset_top = 163.0
+offset_right = 1494.0
+offset_bottom = 763.0
+
+[node name="SeedButtons" type="VBoxContainer" parent="UI/SideBar" unique_id=276785382]
+layout_mode = 2
+
+[node name="Tomato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1897161425]
+layout_mode = 2
+
+[node name="Cucumber" type="Button" parent="UI/SideBar/SeedButtons" unique_id=526466424]
+layout_mode = 2
+
+[node name="Corn" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1968371936]
+layout_mode = 2
+
+[node name="Pumpkin" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1332662983]
+layout_mode = 2
+
+[node name="Onion" type="Button" parent="UI/SideBar/SeedButtons" unique_id=2106684662]
+layout_mode = 2
+
+[node name="Chilli" type="Button" parent="UI/SideBar/SeedButtons" unique_id=669542685]
+layout_mode = 2
+
+[node name="Radish" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1999224794]
+layout_mode = 2
+
+[node name="Potato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1035074739]
+layout_mode = 2
+
+[node name="Carrot" type="Button" parent="UI/SideBar/SeedButtons" unique_id=735847254]
+layout_mode = 2
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=971847733]
 position = Vector2(4, 85)
 
