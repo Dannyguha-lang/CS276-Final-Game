@@ -7,6 +7,9 @@ var ammo_images: Dictionary = {"tomato":"res://Art/cozy_harvest_crops_pack_v1.1/
 var sell_values: Dictionary = {"tomato":10,"cucumber":10,"corn":10,"pumpkin":10,"onion":10,"chilli":10,"radish":10,"potato":10,"carrot":10}
 var weapons:Array = []
 var fish:Array = []
+var selected_seed = "None"
+var selected_ammo = "None"
+var time = "day"
 # Called when the node enters the scene tree for the first time.
 
 func addFish(catch,rarity):
@@ -19,6 +22,8 @@ func addSeeds(type:String,number:int) -> bool:
 	if type not in seeds:
 		return false
 	seeds[type] += number
+	if time == "day":
+		get_tree().current_scene.get_node("UI/SideBar/SeedButtons").updateType(type,seeds[type])
 	return true
 	
 func useSeeds(type:String,number:int) -> bool:
@@ -27,8 +32,28 @@ func useSeeds(type:String,number:int) -> bool:
 	if seeds[type] < number:
 		return false
 	seeds[type] -= number
+	if time == "day":
+		get_tree().current_scene.get_node("UI/SideBar/SeedButtons").updateType(type,seeds[type])
 	return true
-
+	
+func addAmmo(type:String,number:int) -> bool:
+	if type not in ammo:
+		return false
+	ammo[type] += number
+	if time == "night":
+		get_tree().current_scene.get_node("UI/SideBar/SeedButtons").updateType(type,ammo[type])
+	return true
+	
+func useAmmo(type:String,number:int) -> bool:
+	if type not in ammo:
+		return false
+	if ammo[type] < number:
+		return false
+	ammo[type] -= number
+	if time == "night":
+		get_tree().current_scene.get_node("UI/SideBar/SeedButtons").updateType(type,ammo[type])
+	return true
+	
 func sellSeeds(type:String,number:int) -> bool:
 	if type not in sell_values:
 		return false

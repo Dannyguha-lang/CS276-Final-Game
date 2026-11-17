@@ -8,6 +8,16 @@
 [ext_resource type="Script" uid="uid://dxbm6qk22feaq" path="res://Scripts/inventory_item_view.gd" id="5_3fw17"]
 [ext_resource type="Script" uid="uid://bjwcmpmn1hjwl" path="res://Scripts/fisherman.gd" id="6_3fw17"]
 [ext_resource type="Script" uid="uid://do4yvhkau0res" path="res://Scripts/shopkeeper.gd" id="7_3fw17"]
+[ext_resource type="Script" uid="uid://dufkvihhk7sjo" path="res://Scripts/seed_buttons_day.gd" id="7_lvtp1"]
+[ext_resource type="Texture2D" uid="uid://gflfcelfj2xu" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/01_tomato/tomato_produce_normal.png" id="8_ouyqe"]
+[ext_resource type="Texture2D" uid="uid://dmdvspiwqcm3g" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/02_cucumber/cucumber_produce_normal.png" id="9_lvtp1"]
+[ext_resource type="Texture2D" uid="uid://cqddga5cppvxi" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/04_corn/corn_produce_normal.png" id="10_mfjfk"]
+[ext_resource type="Texture2D" uid="uid://b88t0o03qoyt7" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/05_pumpkin/pumpkin_produce_normal.png" id="11_kfifp"]
+[ext_resource type="Texture2D" uid="uid://c4snqh5worwrd" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/08_onion/onion_produce_normal.png" id="12_nhfe3"]
+[ext_resource type="Texture2D" uid="uid://b7loimo5grd7o" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/10_red_chili/red_chili_produce_normal.png" id="13_x3w7q"]
+[ext_resource type="Texture2D" uid="uid://c03adaljx38eu" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/13_purple_radish/purple_radish_produce_normal.png" id="14_t7cpd"]
+[ext_resource type="Texture2D" uid="uid://wotedkwcnb1p" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/14_potato/potato_produce_normal.png" id="15_7ys1n"]
+[ext_resource type="Texture2D" uid="uid://wf10r5ln6qef" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/17_carrot/carrot_produce_normal.png" id="16_cndmr"]
 
 [node name="Day" type="Node2D" unique_id=419098203]
 
@@ -176,41 +186,222 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SideBar" type="PanelContainer" parent="UI" unique_id=285383613]
-custom_minimum_size = Vector2(100, 600)
-offset_left = 1394.0
-offset_top = 163.0
-offset_right = 1494.0
-offset_bottom = 763.0
+custom_minimum_size = Vector2(88, 600)
+custom_maximum_size = Vector2(88, -1)
+offset_left = 1400.0
+offset_top = 140.0
+offset_right = 1488.0
+offset_bottom = 799.0
+theme = ExtResource("1_aactg")
 
 [node name="SeedButtons" type="VBoxContainer" parent="UI/SideBar" unique_id=276785382]
+custom_minimum_size = Vector2(64, 0)
+custom_maximum_size = Vector2(64, -1)
+layout_mode = 2
+script = ExtResource("7_lvtp1")
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons" unique_id=1560263665]
+layout_mode = 2
+text = "Seeds"
+horizontal_alignment = 1
+
+[node name="tomato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1897161425]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="Tomato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1897161425]
+[node name="ButtonContents" type="VBoxContainer" parent="UI/SideBar/SeedButtons/tomato" unique_id=66304135]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SideBar/SeedButtons/tomato/ButtonContents" unique_id=1425896252]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+texture = ExtResource("8_ouyqe")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/tomato/ButtonContents" unique_id=1631268737]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="cucumber" type="Button" parent="UI/SideBar/SeedButtons" unique_id=526466424]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="Cucumber" type="Button" parent="UI/SideBar/SeedButtons" unique_id=526466424]
+[node name="ButtonContents" type="VBoxContainer" parent="UI/SideBar/SeedButtons/cucumber" unique_id=1686100469]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SideBar/SeedButtons/cucumber/ButtonContents" unique_id=1334888800]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+texture = ExtResource("9_lvtp1")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/cucumber/ButtonContents" unique_id=514791323]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="corn" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1968371936]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="Corn" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1968371936]
+[node name="ButtonContents" type="VBoxContainer" parent="UI/SideBar/SeedButtons/corn" unique_id=413310751]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SideBar/SeedButtons/corn/ButtonContents" unique_id=52314200]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+texture = ExtResource("10_mfjfk")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/corn/ButtonContents" unique_id=339846927]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="pumpkin" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1332662983]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="Pumpkin" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1332662983]
+[node name="ButtonContents" type="VBoxContainer" parent="UI/SideBar/SeedButtons/pumpkin" unique_id=718745906]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SideBar/SeedButtons/pumpkin/ButtonContents" unique_id=599778995]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+texture = ExtResource("11_kfifp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/pumpkin/ButtonContents" unique_id=1311436575]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="onion" type="Button" parent="UI/SideBar/SeedButtons" unique_id=2106684662]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="Onion" type="Button" parent="UI/SideBar/SeedButtons" unique_id=2106684662]
+[node name="ButtonContents" type="VBoxContainer" parent="UI/SideBar/SeedButtons/onion" unique_id=1453468867]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SideBar/SeedButtons/onion/ButtonContents" unique_id=1419545136]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+texture = ExtResource("12_nhfe3")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/onion/ButtonContents" unique_id=1439623332]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="chilli" type="Button" parent="UI/SideBar/SeedButtons" unique_id=669542685]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="Chilli" type="Button" parent="UI/SideBar/SeedButtons" unique_id=669542685]
+[node name="ButtonContents" type="VBoxContainer" parent="UI/SideBar/SeedButtons/chilli" unique_id=887523303]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SideBar/SeedButtons/chilli/ButtonContents" unique_id=1276911546]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+texture = ExtResource("13_x3w7q")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/chilli/ButtonContents" unique_id=909801082]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="radish" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1999224794]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="Radish" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1999224794]
+[node name="ButtonContents" type="VBoxContainer" parent="UI/SideBar/SeedButtons/radish" unique_id=1355779663]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SideBar/SeedButtons/radish/ButtonContents" unique_id=1584269847]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+texture = ExtResource("14_t7cpd")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/radish/ButtonContents" unique_id=446941584]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="potato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1035074739]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="Potato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1035074739]
+[node name="ButtonContents" type="VBoxContainer" parent="UI/SideBar/SeedButtons/potato" unique_id=1674082029]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SideBar/SeedButtons/potato/ButtonContents" unique_id=2073675197]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+texture = ExtResource("15_7ys1n")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/potato/ButtonContents" unique_id=1233426550]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="carrot" type="Button" parent="UI/SideBar/SeedButtons" unique_id=735847254]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="Carrot" type="Button" parent="UI/SideBar/SeedButtons" unique_id=735847254]
+[node name="ButtonContents" type="VBoxContainer" parent="UI/SideBar/SeedButtons/carrot" unique_id=819089519]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SideBar/SeedButtons/carrot/ButtonContents" unique_id=29333915]
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+texture = ExtResource("16_cndmr")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/carrot/ButtonContents" unique_id=1906940316]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=971847733]
 position = Vector2(4, 85)
