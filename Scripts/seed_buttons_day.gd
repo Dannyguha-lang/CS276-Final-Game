@@ -1,5 +1,5 @@
 extends VBoxContainer
-
+var collapsed = false
 func updateType(type,num):
 	var node = get_node(type)
 	if node:
@@ -8,7 +8,34 @@ func updateType(type,num):
 func chooseSeed(type):
 	if type in Inventory.seeds and Inventory.seeds[type] > 0:
 		Inventory.selected_seed = type
+func ExpandCollapse():
+	if collapsed:
+		for type in Inventory.ammo:
+			var node = get_node(type)
+			if Inventory.seeds[type] <= 0:
+				node.disabled = true
+			else:
+				node.disabled = false
+			if type != Inventory.selected_ammo:
+				node.hide()
+			else:
+				node.show()
+	else:
+		for type in Inventory.ammo:
+			var node = get_node(type)
+			if Inventory.seeds[type] <= 0:
+				node.disabled = true
+			else:
+				node.disabled = false
+			node.show()
 
+func ExpandCollapsePress():
+	collapsed = not collapsed
+	ExpandCollapse()
+	if collapsed:
+		$Panel/VBox/ExpandCollapse.text = "↓"
+	else:
+		$Panel/VBox/ExpandCollapse.text = "↑"
 		
 func _ready() -> void:
 	$tomato.pressed.connect(chooseSeed.bind("tomato"))
@@ -20,6 +47,8 @@ func _ready() -> void:
 	$radish.pressed.connect(chooseSeed.bind("radish"))
 	$potato.pressed.connect(chooseSeed.bind("potato"))
 	$carrot.pressed.connect(chooseSeed.bind("carrot"))
+	$Panel/VBox/ExpandCollapse.pressed.connect(ExpandCollapsePress)
+	ExpandCollapse()
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('tomato'):

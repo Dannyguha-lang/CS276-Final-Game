@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://wotedkwcnb1p" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/14_potato/potato_produce_normal.png" id="15_7ys1n"]
 [ext_resource type="Texture2D" uid="uid://wf10r5ln6qef" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/17_carrot/carrot_produce_normal.png" id="16_cndmr"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvtp1"]
+
 [node name="Day" type="Node2D" unique_id=419098203]
 
 [node name="Map" type="Node2D" parent="." unique_id=1468528695]
@@ -189,21 +191,37 @@ layout_mode = 2
 custom_minimum_size = Vector2(88, 600)
 custom_maximum_size = Vector2(88, -1)
 offset_left = 1400.0
-offset_top = 140.0
+offset_top = 100.0
 offset_right = 1488.0
-offset_bottom = 799.0
-theme = ExtResource("1_aactg")
+offset_bottom = 819.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lvtp1")
 
 [node name="SeedButtons" type="VBoxContainer" parent="UI/SideBar" unique_id=276785382]
 custom_minimum_size = Vector2(64, 0)
 custom_maximum_size = Vector2(64, -1)
 layout_mode = 2
+theme = ExtResource("1_aactg")
 script = ExtResource("7_lvtp1")
 
-[node name="Label" type="Label" parent="UI/SideBar/SeedButtons" unique_id=1560263665]
+[node name="Panel" type="PanelContainer" parent="UI/SideBar/SeedButtons" unique_id=2046757804]
 layout_mode = 2
-text = "Seeds"
+
+[node name="VBox" type="VBoxContainer" parent="UI/SideBar/SeedButtons/Panel" unique_id=1091308804]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/Panel/VBox" unique_id=1586179118]
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+text = "Seeds
+
+"
 horizontal_alignment = 1
+
+[node name="ExpandCollapse" type="Button" parent="UI/SideBar/SeedButtons/Panel/VBox" unique_id=1060276528]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "↑"
 
 [node name="tomato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=1897161425]
 custom_minimum_size = Vector2(64, 64)

@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://wotedkwcnb1p" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/14_potato/potato_produce_normal.png" id="12_kp0df"]
 [ext_resource type="Texture2D" uid="uid://wf10r5ln6qef" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/17_carrot/carrot_produce_normal.png" id="13_kyc5m"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_loplb"]
+
 [node name="Night" type="Node2D" unique_id=96747280]
 
 [node name="Map" type="Node2D" parent="." unique_id=533463417]
@@ -114,24 +116,47 @@ layout_mode = 2
 [node name="SellItem" type="Button" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1646030015]
 layout_mode = 2
 
+[node name="PlayerStatus" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=2048634317]
+layout_mode = 2
+
+[node name="PlayerIcon" type="TextureRect" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/PlayerStatus" unique_id=2142851819]
+layout_mode = 2
+
+[node name="Health" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/PlayerStatus" unique_id=1329576887]
+layout_mode = 2
+
 [node name="SideBar" type="PanelContainer" parent="UI" unique_id=138084858]
 offset_left = 1400.0
-offset_top = 140.0
-offset_right = 1488.0
-offset_bottom = 799.0
-theme = ExtResource("1_cfpff")
+offset_top = 100.0
+offset_right = 1464.0
+offset_bottom = 826.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_loplb")
 
 [node name="SeedButtons" type="VBoxContainer" parent="UI/SideBar" unique_id=1291186198]
 custom_minimum_size = Vector2(64, 0)
 custom_maximum_size = Vector2(64, -1)
 layout_mode = 2
+theme = ExtResource("1_cfpff")
 script = ExtResource("4_loplb")
 
-[node name="Label" type="Label" parent="UI/SideBar/SeedButtons" unique_id=1699834487]
+[node name="Panel" type="PanelContainer" parent="UI/SideBar/SeedButtons" unique_id=1657758808]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI/SideBar/SeedButtons/Panel" unique_id=1103049122]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SideBar/SeedButtons/Panel/VBox" unique_id=1699834487]
+custom_maximum_size = Vector2(-1, 32)
 layout_mode = 2
 text = "Ammo
 "
 horizontal_alignment = 1
+
+[node name="ExpandCollapse" type="Button" parent="UI/SideBar/SeedButtons/Panel/VBox" unique_id=634869203]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "↑"
 
 [node name="tomato" type="Button" parent="UI/SideBar/SeedButtons" unique_id=2129646908]
 custom_minimum_size = Vector2(64, 64)
