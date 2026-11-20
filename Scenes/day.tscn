@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c2yirxk68ln7q"]
 
 [ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_aactg"]
+[ext_resource type="PackedScene" uid="uid://comuv1wa5r6li" path="res://Scenes/maps/day_map.tscn" id="1_mfjfk"]
 [ext_resource type="Script" uid="uid://bs6shsuvm5hrw" path="res://Scripts/shop.gd" id="2_3fw17"]
 [ext_resource type="PackedScene" uid="uid://c5ko81i4sw3dx" path="res://Scenes/farm_plot.tscn" id="2_ouyqe"]
 [ext_resource type="Script" uid="uid://dyl8hln4wrh5i" path="res://Scripts/fishing_minigame.gd" id="3_3fw17"]
@@ -23,7 +24,10 @@
 
 [node name="Day" type="Node2D" unique_id=419098203]
 
+[node name="DayMap" parent="." unique_id=2027626945 instance=ExtResource("1_mfjfk")]
+
 [node name="Map" type="Node2D" parent="." unique_id=1468528695]
+visible = false
 
 [node name="Background" type="TileMapLayer" parent="Map" unique_id=2136143107]
 
@@ -66,6 +70,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Phase Label" type="Label" parent="UI/Top Bar/Bar List" unique_id=1005616671]
+layout_mode = 2
+
+[node name="Health Bar" type="Label" parent="UI/Top Bar/Bar List" unique_id=1954459105]
 layout_mode = 2
 
 [node name="Prompt Bar" type="PanelContainer" parent="UI" unique_id=1247134983]
@@ -146,10 +153,19 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Inventory" type="PanelContainer" parent="UI/UIRoot" unique_id=129611976]
-custom_minimum_size = Vector2(640, 512)
-layout_mode = 0
-offset_right = 640.0
-offset_bottom = 512.0
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 160.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("4_3fw17")
 
 [node name="InventoryContainer" type="VBoxContainer" parent="UI/UIRoot/Inventory" unique_id=1099078292]
@@ -168,24 +184,41 @@ layout_mode = 2
 [node name="InventoryRows" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=949666204]
 layout_mode = 2
 
-[node name="InventoryItemView" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=729485893]
+[node name="CenterContainer" type="CenterContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=835887532]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("5_3fw17")
 
-[node name="ItemImage" type="TextureRect" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1477260362]
+[node name="InventoryItemView" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer" unique_id=729485893]
 layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
 
-[node name="ItemName" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=402929443]
+[node name="ItemImage" type="TextureRect" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=1477260362]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+expand_mode = 1
+stretch_mode = 4
 
-[node name="ItemAmount" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=480132817]
+[node name="ItemName" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=402929443]
 layout_mode = 2
+text = "Name: "
+horizontal_alignment = 1
 
-[node name="ItemValue" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1828746237]
+[node name="ItemAmount" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=480132817]
 layout_mode = 2
+text = "Amount:"
+horizontal_alignment = 1
 
-[node name="SellItem" type="Button" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1513082418]
+[node name="ItemValue" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=1828746237]
 layout_mode = 2
+text = "Value:"
+horizontal_alignment = 1
+
+[node name="SellItem" type="Button" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=1513082418]
+layout_mode = 2
+text = "Sell"
 
 [node name="SideBar" type="PanelContainer" parent="UI" unique_id=285383613]
 custom_minimum_size = Vector2(88, 600)
@@ -429,7 +462,7 @@ position = Vector2(4, 85)
 [node name="Player Sprite" type="Sprite2D" parent="Player" unique_id=1297459562]
 
 [node name="Fisherman" type="CharacterBody2D" parent="." unique_id=1977656258]
-position = Vector2(8, 170)
+position = Vector2(765, 659)
 script = ExtResource("6_3fw17")
 
 [node name="Fisherman Collision" type="CollisionShape2D" parent="Fisherman" unique_id=1396862073]
@@ -437,7 +470,7 @@ script = ExtResource("6_3fw17")
 [node name="Fisherman Sprite" type="Sprite2D" parent="Fisherman" unique_id=1115511551]
 
 [node name="Shopkeeper" type="CharacterBody2D" parent="." unique_id=1690293496]
-position = Vector2(4, 85)
+position = Vector2(1142, 270)
 script = ExtResource("7_3fw17")
 
 [node name="Shopkeeper Collision" type="CollisionShape2D" parent="Shopkeeper" unique_id=1047059068]

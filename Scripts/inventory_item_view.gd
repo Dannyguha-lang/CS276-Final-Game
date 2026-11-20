@@ -1,9 +1,10 @@
-extends VBoxContainer
+extends CenterContainer
 
-@onready var item_image = $ItemImage
-@onready var item_name = $ItemName
-@onready var item_value = $ItemValue
-@onready var item_sell = $SellItem
+@onready var item_image = $InventoryItemView/ItemImage
+@onready var item_name = $InventoryItemView/ItemName
+@onready var item_amount = $InventoryItemView/ItemAmount
+@onready var item_value = $InventoryItemView/ItemValue
+@onready var item_sell = $InventoryItemView/SellItem
 var current_item = "None"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,14 +15,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func changeItem(item,image,iname,value):
+func changeItem(item,image,iamount,value):
 	if visible and (item == current_item or item == "None"):
 		hide()
-		get_parent().get_parent().reset_size() 
+		await get_tree().process_frame
+		get_parent().get_parent().get_parent().reset_size() 
 		current_item = "None"
 		return
 	current_item = item
 	item_image.texture = image
-	item_name.text = iname
-	item_value.text = str(value)
+	item_name.text = "Name: "+ item
+	item_amount.text = "Amount: " + iamount
+	item_value.text = "Value:" + str(value)
 	show()
