@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g43bvmqvdj1p"
-path="res://.godot/imported/bee.png-697495e12e9d64f444eeb5f39357ccd5.ctex"
+uid="uid://cpq1admai6agb"
+path="res://.godot/imported/bat.png-2a3eb1d8076f7729b220e185f599da90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy sprites/bee.png"
-dest_files=["res://.godot/imported/bee.png-697495e12e9d64f444eeb5f39357ccd5.ctex"]
+source_file="res://Art/enemies/bat.png"
+dest_files=["res://.godot/imported/bat.png-2a3eb1d8076f7729b220e185f599da90.ctex"]
 
 [params]
 

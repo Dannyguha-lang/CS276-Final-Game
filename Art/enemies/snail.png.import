@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc8v16ko7cqt4"
-path="res://.godot/imported/ladyBug.png-09737ac11a2aa9a25bb1907a79e4aca3.ctex"
+uid="uid://b6ajwj6mo2smr"
+path="res://.godot/imported/snail.png-6531a28a9adb2198f350cf23f0e8cad6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy sprites/ladyBug.png"
-dest_files=["res://.godot/imported/ladyBug.png-09737ac11a2aa9a25bb1907a79e4aca3.ctex"]
+source_file="res://Art/enemies/snail.png"
+dest_files=["res://.godot/imported/snail.png-6531a28a9adb2198f350cf23f0e8cad6.ctex"]
 
 [params]
 

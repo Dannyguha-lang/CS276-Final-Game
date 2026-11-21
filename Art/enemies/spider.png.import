@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mot4yh2rkaoq"
-path="res://.godot/imported/fishPink.png-a6b401469b849e35703cd52d0795d48f.ctex"
+uid="uid://drfordvfy1n6n"
+path="res://.godot/imported/spider.png-d48059d94a1d3412c9221ac2faec494c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy sprites/fishPink.png"
-dest_files=["res://.godot/imported/fishPink.png-a6b401469b849e35703cd52d0795d48f.ctex"]
+source_file="res://Art/enemies/spider.png"
+dest_files=["res://.godot/imported/spider.png-d48059d94a1d3412c9221ac2faec494c.ctex"]
 
 [params]
 

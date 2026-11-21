@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ajwj6mo2smr"
-path="res://.godot/imported/snail.png-b75df4f67ac3cc56b0a75bec681db069.ctex"
+uid="uid://dc8v16ko7cqt4"
+path="res://.godot/imported/ladybird.png-dfd57dd218a4f9698023ad1ca4f4d184.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy sprites/snail.png"
-dest_files=["res://.godot/imported/snail.png-b75df4f67ac3cc56b0a75bec681db069.ctex"]
+source_file="res://Art/enemies/ladybird.png"
+dest_files=["res://.godot/imported/ladybird.png-dfd57dd218a4f9698023ad1ca4f4d184.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx7hgfp58dsy2"
-path="res://.godot/imported/mouse.png-66f6286f46a75f49b84b1a0a366e3c9d.ctex"
+uid="uid://g43bvmqvdj1p"
+path="res://.godot/imported/bee.png-8e11ab50068c4c0abaa0fac7f754aba5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy sprites/mouse.png"
-dest_files=["res://.godot/imported/mouse.png-66f6286f46a75f49b84b1a0a366e3c9d.ctex"]
+source_file="res://Art/enemies/bee.png"
+dest_files=["res://.godot/imported/bee.png-8e11ab50068c4c0abaa0fac7f754aba5.ctex"]
 
 [params]
 

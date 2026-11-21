@@ -49,7 +49,6 @@ func _ready() -> void:
 	crop_sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	crop_sprite.texture = null
 	_load_crop_textures()
-	print("FarmPlot loaded: ", crop_textures.keys())
 
 # Load all five growth stages.
 func _load_crop_textures() -> void:

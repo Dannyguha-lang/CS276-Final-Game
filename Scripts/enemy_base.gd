@@ -25,15 +25,17 @@ func _ready() -> void:
 	
 	attack_timer.one_shot = true
 	attack_timer.wait_time = attack_cooldown
-	
+	attack_timer.start()
 	repath_timer.one_shot = true
 	repath_timer.wait_time = repath_cooldown
 	
 	nav.path_desired_distance = 8.0
-	nav.target_desired_distance = attack_range * 0.5
+	nav.target_desired_distance = attack_range
 	
 	nav_ready = true
-
+func setAttackTimer():
+	attack_timer.one_shot = true
+	attack_timer.wait_time = attack_cooldown
 func attack():
 	if target and attack_timer.is_stopped():
 		target.takeDamage(damage,element)
