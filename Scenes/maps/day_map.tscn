@@ -140,5 +140,5 @@ position = Vector2(300, 732)
 scale = Vector2(0.375, 0.375)
 
 [node name="FarmPlot9" parent="SoloFarmPlots" unique_id=2063863198 instance=ExtResource("2_rq3v2")]
-position = Vector2(300, 780)
+position = Vector2(301, 780)
 scale = Vector2(0.375, 0.375)

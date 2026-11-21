@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vffo5m0ipfie"]
 
 [ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_cfpff"]
+[ext_resource type="Script" uid="uid://dbxl8aohtwsrp" path="res://Scenes/enemy_spawner.gd" id="1_hurcf"]
 [ext_resource type="Script" uid="uid://b5rrsppvdd34g" path="res://Scripts/inventory.gd" id="2_hndgf"]
 [ext_resource type="Script" uid="uid://dxbm6qk22feaq" path="res://Scripts/inventory_item_view.gd" id="3_jhpr2"]
 [ext_resource type="Script" uid="uid://d1ef1q5u5s5pd" path="res://Scripts/seed_buttons_night.gd" id="4_loplb"]
@@ -32,6 +33,7 @@ position = Vector2(4, 85)
 [node name="Player Sprite" type="Sprite2D" parent="Player" unique_id=2073896314]
 
 [node name="Enemy Spawner" type="Node2D" parent="." unique_id=142050909]
+script = ExtResource("1_hurcf")
 
 [node name="Spawner Timer" type="Timer" parent="Enemy Spawner" unique_id=1138278681]
 
