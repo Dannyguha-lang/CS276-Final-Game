@@ -10,6 +10,7 @@ var fish:Array = []
 var selected_seed = "None"
 var selected_ammo = "None"
 var time = "day"
+var current_cycle = 0
 # Called when the node enters the scene tree for the first time.
 
 func addFish(catch,rarity):
@@ -72,5 +73,5 @@ func getCoins():
 func updateCoins(amount):
 	coins += amount
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func addCycle():
+	current_cycle += 1

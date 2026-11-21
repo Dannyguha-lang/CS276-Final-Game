@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c2yirxk68ln7q"]
 
 [ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_aactg"]
+[ext_resource type="Script" uid="uid://o1twd1ma4jni" path="res://Scenes/day.gd" id="1_kfifp"]
 [ext_resource type="PackedScene" uid="uid://comuv1wa5r6li" path="res://Scenes/maps/day_map.tscn" id="1_mfjfk"]
 [ext_resource type="Script" uid="uid://bs6shsuvm5hrw" path="res://Scripts/shop.gd" id="2_3fw17"]
 [ext_resource type="PackedScene" uid="uid://c5ko81i4sw3dx" path="res://Scenes/farm_plot.tscn" id="2_ouyqe"]
@@ -23,6 +24,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvtp1"]
 
 [node name="Day" type="Node2D" unique_id=419098203]
+script = ExtResource("1_kfifp")
 
 [node name="DayMap" parent="." unique_id=2027626945 instance=ExtResource("1_mfjfk")]
 
@@ -462,7 +464,7 @@ position = Vector2(4, 85)
 [node name="Player Sprite" type="Sprite2D" parent="Player" unique_id=1297459562]
 
 [node name="Fisherman" type="CharacterBody2D" parent="." unique_id=1977656258]
-position = Vector2(765, 659)
+position = Vector2(298, 177)
 script = ExtResource("6_3fw17")
 
 [node name="Fisherman Collision" type="CollisionShape2D" parent="Fisherman" unique_id=1396862073]
@@ -476,3 +478,6 @@ script = ExtResource("7_3fw17")
 [node name="Shopkeeper Collision" type="CollisionShape2D" parent="Shopkeeper" unique_id=1047059068]
 
 [node name="Shopkeeper Sprite" type="Sprite2D" parent="Shopkeeper" unique_id=672805239]
+
+[node name="Timer" type="Timer" parent="." unique_id=918389129]
+one_shot = true

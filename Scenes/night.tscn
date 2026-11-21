@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://vffo5m0ipfie"]
 
 [ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_cfpff"]
+[ext_resource type="Script" uid="uid://0uluvgbbjing" path="res://Scenes/night.gd" id="1_gkxo8"]
 [ext_resource type="Script" uid="uid://dbxl8aohtwsrp" path="res://Scenes/enemy_spawner.gd" id="1_hurcf"]
 [ext_resource type="Script" uid="uid://b5rrsppvdd34g" path="res://Scripts/inventory.gd" id="2_hndgf"]
+[ext_resource type="PackedScene" uid="uid://h17rjoh23tc8" path="res://Scenes/maps/night_map.tscn" id="2_udoo7"]
+[ext_resource type="PackedScene" uid="uid://bpwi37bd77ait" path="res://enemy.tscn" id="3_ckpq3"]
 [ext_resource type="Script" uid="uid://dxbm6qk22feaq" path="res://Scripts/inventory_item_view.gd" id="3_jhpr2"]
 [ext_resource type="Script" uid="uid://d1ef1q5u5s5pd" path="res://Scripts/seed_buttons_night.gd" id="4_loplb"]
 [ext_resource type="Texture2D" uid="uid://gflfcelfj2xu" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/01_tomato/tomato_produce_normal.png" id="5_hurcf"]
@@ -18,8 +21,12 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_loplb"]
 
 [node name="Night" type="Node2D" unique_id=96747280]
+script = ExtResource("1_gkxo8")
+
+[node name="NightMap" parent="." unique_id=1018886322 instance=ExtResource("2_udoo7")]
 
 [node name="Map" type="Node2D" parent="." unique_id=533463417]
+visible = false
 
 [node name="Background" type="TileMapLayer" parent="Map" unique_id=2090902437]
 
@@ -32,10 +39,11 @@ position = Vector2(4, 85)
 
 [node name="Player Sprite" type="Sprite2D" parent="Player" unique_id=2073896314]
 
-[node name="Enemy Spawner" type="Node2D" parent="." unique_id=142050909]
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=142050909]
 script = ExtResource("1_hurcf")
+enemy_base = ExtResource("3_ckpq3")
 
-[node name="Spawner Timer" type="Timer" parent="Enemy Spawner" unique_id=1138278681]
+[node name="SpawnerTimer" type="Timer" parent="EnemySpawner" unique_id=1138278681]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=692554269]
 
@@ -76,47 +84,73 @@ offset_right = 1084.0
 offset_bottom = 704.0
 theme = ExtResource("1_cfpff")
 
-[node name="Inventory" type="PanelContainer" parent="UI/UIRoot" unique_id=2111304328]
-custom_minimum_size = Vector2(640, 512)
-layout_mode = 0
-offset_right = 640.0
-offset_bottom = 512.0
+[node name="Inventory" type="PanelContainer" parent="UI/UIRoot" unique_id=785848908]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 160.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_hndgf")
 
-[node name="InventoryContainer" type="VBoxContainer" parent="UI/UIRoot/Inventory" unique_id=834009358]
+[node name="InventoryContainer" type="VBoxContainer" parent="UI/UIRoot/Inventory" unique_id=1734079803]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=1474676394]
+[node name="Title" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=112397918]
 layout_mode = 2
 text = "Inventory"
 
-[node name="InventoryButtons" type="HBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=2112854952]
+[node name="InventoryButtons" type="HBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=996017216]
 layout_mode = 2
 
-[node name="InventoryPanels" type="HBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=15307566]
+[node name="InventoryPanels" type="HBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer" unique_id=452453299]
 layout_mode = 2
 
-[node name="InventoryRows" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=211705350]
+[node name="InventoryRows" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=1364396070]
 layout_mode = 2
 
-[node name="InventoryItemView" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=1541520751]
+[node name="CenterContainer" type="CenterContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels" unique_id=161492965]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("3_jhpr2")
 
-[node name="ItemImage" type="TextureRect" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1501648399]
+[node name="InventoryItemView" type="VBoxContainer" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer" unique_id=374175397]
 layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
 
-[node name="ItemName" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1684527503]
+[node name="ItemImage" type="TextureRect" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=854582135]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+expand_mode = 1
+stretch_mode = 4
 
-[node name="ItemAmount" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1609226739]
+[node name="ItemName" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=2040814718]
 layout_mode = 2
+text = "Name: "
+horizontal_alignment = 1
 
-[node name="ItemValue" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1151571312]
+[node name="ItemAmount" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=144360753]
 layout_mode = 2
+text = "Amount:"
+horizontal_alignment = 1
 
-[node name="SellItem" type="Button" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/InventoryItemView" unique_id=1646030015]
+[node name="ItemValue" type="Label" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=1656286262]
 layout_mode = 2
+text = "Value:"
+horizontal_alignment = 1
+
+[node name="SellItem" type="Button" parent="UI/UIRoot/Inventory/InventoryContainer/InventoryPanels/CenterContainer/InventoryItemView" unique_id=1538339303]
+layout_mode = 2
+text = "Sell"
 
 [node name="SideBar" type="PanelContainer" parent="UI" unique_id=138084858]
 offset_left = 1400.0
@@ -348,3 +382,5 @@ layout_mode = 2
 text = "0
 "
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=63053166]

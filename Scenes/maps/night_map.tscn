@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://h17rjoh23tc8"]
 
-[ext_resource type="PackedScene" uid="uid://comuv1wa5r6li" path="res://maps/day_map.tscn" id="1_khnxm"]
+[ext_resource type="PackedScene" uid="uid://comuv1wa5r6li" path="res://Scenes/maps/day_map.tscn" id="1_khnxm"]
 
 [sub_resource type="Gradient" id="Gradient_lamp"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -24,73 +24,73 @@ color = Color(0.3, 0.33, 0.55, 1)
 [node name="LampLights" type="Node2D" parent="." unique_id=1944406963]
 
 [node name="Lamp1" type="PointLight2D" parent="LampLights" unique_id=779997461]
-position = Vector2(152, 70)
+position = Vector2(228, 107)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp2" type="PointLight2D" parent="LampLights" unique_id=1562306073]
-position = Vector2(648, 278)
+position = Vector2(972, 421)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp3" type="PointLight2D" parent="LampLights" unique_id=1285430321]
-position = Vector2(712, 278)
+position = Vector2(1067, 420)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp4" type="PointLight2D" parent="LampLights" unique_id=185790647]
-position = Vector2(808, 278)
+position = Vector2(1212, 421)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp5" type="PointLight2D" parent="LampLights" unique_id=964435242]
-position = Vector2(872, 278)
+position = Vector2(1308, 422)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp6" type="PointLight2D" parent="LampLights" unique_id=763488734]
-position = Vector2(248, 454)
+position = Vector2(372, 686)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp7" type="PointLight2D" parent="LampLights" unique_id=1987125771]
-position = Vector2(440, 470)
+position = Vector2(660, 710)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp8" type="PointLight2D" parent="LampLights" unique_id=1507808103]
-position = Vector2(584, 470)
+position = Vector2(660, 806)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp9" type="PointLight2D" parent="LampLights" unique_id=986814325]
-position = Vector2(776, 486)
+position = Vector2(876, 710)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp10" type="PointLight2D" parent="LampLights" unique_id=629083217]
-position = Vector2(840, 486)
+position = Vector2(876, 806)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp11" type="PointLight2D" parent="LampLights" unique_id=1856608189]
-position = Vector2(440, 534)
+position = Vector2(1164, 734)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
 
 [node name="Lamp12" type="PointLight2D" parent="LampLights" unique_id=597603233]
-position = Vector2(584, 534)
+position = Vector2(1260, 735)
 color = Color(1, 0.82, 0.5, 1)
 energy = 1.1
 texture = SubResource("GradientTexture2D_lamp")
