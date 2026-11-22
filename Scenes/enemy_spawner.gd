@@ -22,10 +22,16 @@ func _on_spawn_timer_timeout() -> void:
  
 	var enemy = enemy_base.instantiate()
 	var enemy_type = getRandomEnemy()
-	add_child(enemy)
-	#enemy.set_script("res://Scenes/" + enemy_type + ".gd")
+	
+	var path = "res://Scripts/" + str(enemy_type) + ".gd"
+	
+	if not ResourceLoader.exists(path):
+		push_error("No script for enemy type: " + enemy_type)
+	else:
+		enemy.set_script(load(path))
 	enemy.get_child(0).texture = load("res://Art/enemies/" + enemy_type + ".png")
 	enemy.global_position = randomEdge(enemy_type)
+	add_child(enemy)
 
 func getRandomEnemy():
 	var pool = []

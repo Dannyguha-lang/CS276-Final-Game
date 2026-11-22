@@ -4,10 +4,11 @@ extends Node2D
 
 func _ready() -> void:
 	timer.one_shot = true
-	timer.wait_time = 10
+	timer.wait_time = 30
 	timer.timeout.connect(turnDay)
 	$EnemySpawner.startTimer()
 	timer.start()
+	
 
 func turnDay():
 	Inventory.addCycle()

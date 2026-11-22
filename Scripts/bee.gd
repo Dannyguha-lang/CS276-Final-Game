@@ -4,10 +4,9 @@ var mode = "flight"
 
 
 func _ready() -> void:
-	super()   
 	attack_range = 100
 	attack_cooldown = 0
-	setAttackTimer() 
+	super()   
 	element = "poison"
 
 func attack():
@@ -17,5 +16,6 @@ func attack():
 		mode = "attack"
 		nav.target_desired_distance = attack_range
 	elif target and mode == "attack":
-		target.takeDamage(damage,element)
+		#target.takeDamage(damage,element)
 		die()
+		

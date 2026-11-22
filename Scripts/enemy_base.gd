@@ -22,7 +22,11 @@ func _ready() -> void:
 	add_to_group("enemies")     
 	health = max_health
 	target = get_tree().get_first_node_in_group("player")
+	setBase()
 	
+	
+func setBase():
+	attack_timer.stop()
 	attack_timer.one_shot = true
 	attack_timer.wait_time = attack_cooldown
 	attack_timer.start()
@@ -31,11 +35,7 @@ func _ready() -> void:
 	
 	nav.path_desired_distance = 8.0
 	nav.target_desired_distance = attack_range
-	
 	nav_ready = true
-func setAttackTimer():
-	attack_timer.one_shot = true
-	attack_timer.wait_time = attack_cooldown
 func attack():
 	if target and attack_timer.is_stopped():
 		target.takeDamage(damage,element)
@@ -61,6 +61,7 @@ func move_toward_target() -> void:
 	move_and_slide()
 
 func behave() -> void:
+
 	if not target:
 		pass
 	elif global_position.distance_to(target.global_position) <= attack_range:

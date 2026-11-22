@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vffo5m0ipfie"]
 
 [ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_cfpff"]
-[ext_resource type="Script" uid="uid://0uluvgbbjing" path="res://Scenes/night.gd" id="1_gkxo8"]
+[ext_resource type="Script" uid="uid://0uluvgbbjing" path="res://Scripts/night.gd" id="1_gkxo8"]
 [ext_resource type="Script" uid="uid://dbxl8aohtwsrp" path="res://Scenes/enemy_spawner.gd" id="1_hurcf"]
 [ext_resource type="Script" uid="uid://b5rrsppvdd34g" path="res://Scripts/inventory.gd" id="2_hndgf"]
 [ext_resource type="PackedScene" uid="uid://h17rjoh23tc8" path="res://Scenes/maps/night_map.tscn" id="2_udoo7"]
@@ -48,6 +48,7 @@ enemy_base = ExtResource("3_ckpq3")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=692554269]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1383799376]
+visible = false
 
 [node name="Top Bar" type="PanelContainer" parent="UI" unique_id=1254107527]
 custom_minimum_size = Vector2(1536, 96)

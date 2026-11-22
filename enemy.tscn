@@ -3,14 +3,18 @@
 [ext_resource type="Script" uid="uid://t8qsinls52l0" path="res://Scripts/enemy_base.gd" id="1_7k104"]
 [ext_resource type="Texture2D" uid="uid://b2dtouh737vjy" path="res://Art/Enemy sprites/frog.png" id="2_4gyqm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayv6d"]
+size = Vector2(56, 40)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=1006615079]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_7k104")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=398730594]
 texture = ExtResource("2_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=54630104]
+shape = SubResource("RectangleShape2D_ayv6d")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=711429472]
 
