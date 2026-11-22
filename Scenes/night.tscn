@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://b5rrsppvdd34g" path="res://Scripts/inventory.gd" id="2_hndgf"]
 [ext_resource type="PackedScene" uid="uid://h17rjoh23tc8" path="res://Scenes/maps/night_map.tscn" id="2_udoo7"]
 [ext_resource type="PackedScene" uid="uid://bpwi37bd77ait" path="res://enemy.tscn" id="3_ckpq3"]
+[ext_resource type="Script" uid="uid://da613uryf2tct" path="res://Scripts/player_night.gd" id="3_fur6u"]
 [ext_resource type="Script" uid="uid://dxbm6qk22feaq" path="res://Scripts/inventory_item_view.gd" id="3_jhpr2"]
+[ext_resource type="Texture2D" uid="uid://d23h68fu14opa" path="res://Art/farmer.png" id="4_7g1oc"]
 [ext_resource type="Script" uid="uid://d1ef1q5u5s5pd" path="res://Scripts/seed_buttons_night.gd" id="4_loplb"]
 [ext_resource type="Texture2D" uid="uid://gflfcelfj2xu" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/01_tomato/tomato_produce_normal.png" id="5_hurcf"]
 [ext_resource type="Texture2D" uid="uid://dmdvspiwqcm3g" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/02_cucumber/cucumber_produce_normal.png" id="6_gkxo8"]
@@ -34,10 +36,12 @@ visible = false
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1171606268]
 position = Vector2(4, 85)
+script = ExtResource("3_fur6u")
 
 [node name="Player Collision" type="CollisionShape2D" parent="Player" unique_id=1348939472]
 
 [node name="Player Sprite" type="Sprite2D" parent="Player" unique_id=2073896314]
+texture = ExtResource("4_7g1oc")
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=142050909]
 script = ExtResource("1_hurcf")

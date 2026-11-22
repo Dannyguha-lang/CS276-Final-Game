@@ -3,6 +3,7 @@ extends Area2D
 @export var speed: float = 600.0
 @export var damage: float = 25.0
 @export var element_type: String = "none"
+@onready var sprite: Sprite2D = $Sprite2D
 
 # Different bullet effects
 var knockback: bool = false
@@ -14,26 +15,12 @@ var is_split_child: bool = false
 
 var direction: Vector2 = Vector2.RIGHT
 
-# Temporary - draws bullet types as different colored circles
-func _draw() -> void:
-	var bullet_color := Color("ffffff") 
-	
-	match element_type:
-		"fire": bullet_color = Color("ff4500") 
-		"water": bullet_color = Color("1e90ff")  
-		"poison": bullet_color = Color("9370db")  
-		"earth": bullet_color = Color("8b4513")  
-
-	if knockback: bullet_color = Color("ff8c00") 
-	if piercing: bullet_color = Color("ffeb3b") 
-	if aoe: bullet_color = Color("e91e63") 
-	if splits: bullet_color = Color("d81b60")
-	if stun_chance > 0.0: bullet_color = Color("795548")
-
-	draw_circle(Vector2.ZERO, 6.0, bullet_color)
-
 # Checks for collisions and makes bullets disappear after 1s lifetime
 func _ready() -> void:
+	if Inventory.selected_ammo != "None":
+		sprite.texture = load(Inventory.ammo_images[Inventory.selected_ammo])
+	else:
+		sprite.texture = load('res://Art/stone.png')
 	self.body_entered.connect(_on_body_entered)
 	get_tree().create_timer(1.0).timeout.connect(queue_free)
 
@@ -70,29 +57,40 @@ func _on_body_entered(body: Node2D) -> void:
 		_trigger_seed_split()		
 	queue_free()
 
+# Tomato ability
 func _trigger_aoe_explosion() -> void:
+	# Gets state space to find nearby enemies
 	var space_state = get_world_2d().direct_space_state
+	
+	# Set up rules for spacias search - circle radius of 4 tiles
 	var query = PhysicsShapeQueryParameters2D.new()
 	var circle = CircleShape2D.new()
 	circle.radius = 64.0
 	query.shape = circle
+	
+	# Match center to bullet position
 	query.transform = global_transform
 	
+	# Creates array containing each physics body overlapping the circle
 	var results = space_state.intersect_shape(query)
 	for hit in results:
 		var target = hit.collider
 		if target.is_in_group("enemies") and target.has_method("take_damage"):
 			target.take_damage(damage * 0.5, element_type) 
 
+# Corn ability
 func _trigger_seed_split() -> void:
-	var angles = [-0.4, 0.0, 0.4] 
-	for angle in angles:
+	var angles = [-0.4, 0.0, 0.4] # Direction for each split child
+	for angle in angles: # For each child, create a new bullet scene
 		var shrapnel = load("res://scenes/bullet.tscn").instantiate()
+		# Offset spawn in direction of split (so that it doesn't 
+		# collide with the enemy it is splitting from)
 		shrapnel.global_position = global_position + (direction.rotated(angle) * 30)
 		shrapnel.direction = direction.rotated(angle)
 		shrapnel.rotation = shrapnel.direction.angle()
 		shrapnel.damage = damage * 0.4
 		shrapnel.speed = speed * 0.8
+		# So that it doesn't split again
 		shrapnel.is_split_child = true 
 		get_tree().current_scene.call_deferred("add_child", shrapnel)
 		

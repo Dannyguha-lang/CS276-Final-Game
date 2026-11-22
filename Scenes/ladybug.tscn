@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://d1a3ia5ovk0x0"]
 
+[ext_resource type="Script" uid="uid://daswib32ms4pn" path="res://Scripts/ladybug.gd" id="1_5ymec"]
+
 [node name="Ladybug" type="CharacterBody2D" unique_id=778856118]
+script = ExtResource("1_5ymec")
 
 [node name="Ladybug Sprite" type="Sprite2D" parent="." unique_id=509119856]
 
