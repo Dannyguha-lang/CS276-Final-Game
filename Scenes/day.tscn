@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c2yirxk68ln7q"]
 
 [ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_aactg"]
-[ext_resource type="Script" uid="uid://o1twd1ma4jni" path="res://Scenes/day.gd" id="1_kfifp"]
-[ext_resource type="PackedScene" uid="uid://comuv1wa5r6li" path="res://Scenes/maps/day_map.tscn" id="1_mfjfk"]
+[ext_resource type="Script" uid="uid://o1twd1ma4jni" path="res://Scripts/day.gd" id="1_kfifp"]
+[ext_resource type="PackedScene" uid="uid://comuv1wa5r6li" path="res://Scenes/day_map.tscn" id="1_mfjfk"]
 [ext_resource type="Script" uid="uid://bs6shsuvm5hrw" path="res://Scripts/shop.gd" id="2_3fw17"]
 [ext_resource type="PackedScene" uid="uid://c5ko81i4sw3dx" path="res://Scenes/farm_plot.tscn" id="2_ouyqe"]
 [ext_resource type="Script" uid="uid://dyl8hln4wrh5i" path="res://Scripts/fishing_minigame.gd" id="3_3fw17"]
@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c03adaljx38eu" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/13_purple_radish/purple_radish_produce_normal.png" id="14_t7cpd"]
 [ext_resource type="Texture2D" uid="uid://wotedkwcnb1p" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/14_potato/potato_produce_normal.png" id="15_7ys1n"]
 [ext_resource type="Texture2D" uid="uid://wf10r5ln6qef" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/17_carrot/carrot_produce_normal.png" id="16_cndmr"]
-[ext_resource type="Script" uid="uid://dho0d6f4v6x77" path="res://Scenes/player_day.gd" id="19_nhfe3"]
+[ext_resource type="Script" uid="uid://dho0d6f4v6x77" path="res://Scripts/player_day.gd" id="19_nhfe3"]
 [ext_resource type="Texture2D" uid="uid://d23h68fu14opa" path="res://Art/farmer.png" id="20_x3w7q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvtp1"]

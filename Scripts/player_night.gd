@@ -3,7 +3,7 @@ extends CharacterBody2D
 # Player movement speed and the area the player can walk in.
 @export var SPEED = 220.0
 const MIN_POS = Vector2(54, 95)
-const MAX_POS = Vector2(970, 590)
+const MAX_POS = Vector2(1460, 860)
 
 @export var max_health: float = 100.0
 var health: float = 100.0
@@ -176,7 +176,7 @@ func takeDamage(amount: float,element:String) -> void:
 		die()
 
 func die() -> void:
-	get_tree().current_scene._notify("GAME OVER! Player died!")
+	#get_tree().current_scene._notify("GAME OVER! Player died!")
 	set_physics_process(false)
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	

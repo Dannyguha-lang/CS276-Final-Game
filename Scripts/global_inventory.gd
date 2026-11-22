@@ -75,3 +75,14 @@ func updateCoins(amount):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func addCycle():
 	current_cycle += 1
+	
+func spawnLoot():
+	var rng = randf()
+	if rng < 0.1:
+		var pool = ["tomato","cucumber","corn","pumpkin","onion","chilli","radish","potato","carrot"]
+		rng = randi_range(0,len(pool)-1)
+		var loot = pool[rng]
+		seeds[loot] += 1
+	rng = randi_range(0,3)
+	updateCoins(rng)
+		

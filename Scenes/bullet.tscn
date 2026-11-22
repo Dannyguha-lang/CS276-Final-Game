@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d2f5b017gf8xq"]
+[gd_scene format=3 uid="uid://f2pfgauxrejr"]
 
 [ext_resource type="Script" uid="uid://ckshtrd0qj1d6" path="res://Scripts/bullet.gd" id="1_mkf8s"]
 [ext_resource type="Texture2D" uid="uid://cei1coaiko0u6" path="res://Art/stone.png" id="2_y25gk"]
@@ -7,7 +7,6 @@
 radius = 6.0
 
 [node name="Bullet" type="Area2D" unique_id=623210701]
-collision_mask = 2
 script = ExtResource("1_mkf8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1649956808]

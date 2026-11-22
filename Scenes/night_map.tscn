@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://h17rjoh23tc8"]
 
-[ext_resource type="PackedScene" uid="uid://comuv1wa5r6li" path="res://Scenes/maps/day_map.tscn" id="1_khnxm"]
+[ext_resource type="PackedScene" uid="uid://comuv1wa5r6li" path="res://Scenes/day_map.tscn" id="1_khnxm"]
 
 [sub_resource type="Gradient" id="Gradient_lamp"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)

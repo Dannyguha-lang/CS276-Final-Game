@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var SPEED = 220.0
 const MIN_POS = Vector2(54, 95)
-const MAX_POS = Vector2(970, 590)
+const MAX_POS = Vector2(1460, 860)
 
 func _ready() -> void:
 	add_to_group("player")

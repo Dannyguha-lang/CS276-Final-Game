@@ -31,12 +31,13 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	# Ensures hit body is a character and enemy
 	if body is CharacterBody2D and not body.is_in_group("enemies"):
+		print(body)
 		return
 	print("body hit ", body.name)
 	# Different bullet effects on enemies
 	if body.is_in_group("enemies"):
-		if body.has_method("take_damage"):
-			body.take_damage(damage, element_type)
+		if body.has_method("takeDamage"):
+			body.takeDamage(damage, element_type)
 	
 		if knockback and body.has_method("apply_knockback"):
 			body.apply_knockback(direction * 300)

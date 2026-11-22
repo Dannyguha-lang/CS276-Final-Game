@@ -97,3 +97,4 @@ func apply_stun(duration: float) -> void:
 func die() -> void:
 	died.emit(self)
 	queue_free()
+	Inventory.spawnLoot()

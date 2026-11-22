@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://cx80qejhsmb8e" path="res://Themes/ui.tres" id="1_cfpff"]
 [ext_resource type="Script" uid="uid://0uluvgbbjing" path="res://Scripts/night.gd" id="1_gkxo8"]
-[ext_resource type="Script" uid="uid://dbxl8aohtwsrp" path="res://Scenes/enemy_spawner.gd" id="1_hurcf"]
+[ext_resource type="Script" uid="uid://dbxl8aohtwsrp" path="res://Scripts/enemy_spawner.gd" id="1_hurcf"]
 [ext_resource type="Script" uid="uid://b5rrsppvdd34g" path="res://Scripts/inventory.gd" id="2_hndgf"]
-[ext_resource type="PackedScene" uid="uid://h17rjoh23tc8" path="res://Scenes/maps/night_map.tscn" id="2_udoo7"]
-[ext_resource type="PackedScene" uid="uid://bpwi37bd77ait" path="res://enemy.tscn" id="3_ckpq3"]
+[ext_resource type="PackedScene" uid="uid://h17rjoh23tc8" path="res://Scenes/night_map.tscn" id="2_udoo7"]
+[ext_resource type="PackedScene" uid="uid://bpwi37bd77ait" path="res://Scenes/enemy.tscn" id="3_ckpq3"]
 [ext_resource type="Script" uid="uid://da613uryf2tct" path="res://Scripts/player_night.gd" id="3_fur6u"]
 [ext_resource type="Script" uid="uid://dxbm6qk22feaq" path="res://Scripts/inventory_item_view.gd" id="3_jhpr2"]
 [ext_resource type="Texture2D" uid="uid://d23h68fu14opa" path="res://Art/farmer.png" id="4_7g1oc"]
