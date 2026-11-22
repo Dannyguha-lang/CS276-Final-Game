@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://c03adaljx38eu" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/13_purple_radish/purple_radish_produce_normal.png" id="14_t7cpd"]
 [ext_resource type="Texture2D" uid="uid://wotedkwcnb1p" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/14_potato/potato_produce_normal.png" id="15_7ys1n"]
 [ext_resource type="Texture2D" uid="uid://wf10r5ln6qef" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/17_carrot/carrot_produce_normal.png" id="16_cndmr"]
+[ext_resource type="Script" uid="uid://dho0d6f4v6x77" path="res://Scenes/player_day.gd" id="19_nhfe3"]
+[ext_resource type="Texture2D" uid="uid://d23h68fu14opa" path="res://Art/farmer.png" id="20_x3w7q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvtp1"]
 
@@ -458,10 +460,12 @@ horizontal_alignment = 1
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=971847733]
 position = Vector2(4, 85)
+script = ExtResource("19_nhfe3")
 
 [node name="Player Collision" type="CollisionShape2D" parent="Player" unique_id=899559284]
 
 [node name="Player Sprite" type="Sprite2D" parent="Player" unique_id=1297459562]
+texture = ExtResource("20_x3w7q")
 
 [node name="Fisherman" type="CharacterBody2D" parent="." unique_id=1977656258]
 position = Vector2(298, 177)

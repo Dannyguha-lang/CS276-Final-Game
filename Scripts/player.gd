@@ -53,7 +53,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		
 	match event.keycode:
 		KEY_1:
-			active_seed_ability = "corn"
+			active_seed_ability = "normal"
 		KEY_2:
 			active_seed_ability = "chilli"
 		KEY_3:
@@ -77,21 +77,13 @@ func _unhandled_key_input(event: InputEvent) -> void:
 func shoot() -> void:
 	if bullet_scene == null:
 		return
+		
+	var current_ammo = Inventory.selected_ammo
+	
+	if not Inventory.useAmmo(current_ammo, 1):
+		return
 
 	var game = get_tree().current_scene
-
-	# Special ammo is limited, normal ammo is unlimited
-	if active_seed_ability == "corn":
-		if game.corn_ammo <= 0:
-			active_seed_ability = "normal"
-		else:
-			game.corn_ammo -= 1
-
-	elif active_seed_ability == "chilli":
-		if game.chili_ammo <= 0:
-			active_seed_ability = "normal"
-		else:
-			game.chili_ammo -= 1
 
 	fire_cooldown = fire_rate
 
@@ -99,9 +91,7 @@ func shoot() -> void:
 
 	_apply_ability_modifier(bullet)
 
-	var target_dir = (
-		get_global_mouse_position() - global_position
-	).normalized()
+	var target_dir = (get_global_mouse_position() - global_position).normalized()
 
 	game.add_child(bullet)
 
@@ -118,9 +108,6 @@ func _apply_ability_modifier(bullet: Node2D) -> void:
 	bullet.stun_chance = 0.0
 	
 	match active_seed_ability:
-		"normal":
-			bullet.element_type = "none"
-			bullet.damage = 15.0
 		"pumpkin":
 			bullet.element_type = "none"
 			bullet.damage = 25.0
@@ -134,7 +121,7 @@ func _apply_ability_modifier(bullet: Node2D) -> void:
 		"cucumber":
 			bullet.element_type = "water"
 			bullet.damage = 25.0
-		"mushroom":
+		"radish":
 			bullet.element_type = "poison"
 			bullet.damage = 25.0
 		"tomato":
@@ -142,7 +129,7 @@ func _apply_ability_modifier(bullet: Node2D) -> void:
 			bullet.damage = 12.5
 			if "aoe" in bullet:
 				bullet.aoe = true
-		"pomegranate":
+		"corn":
 			bullet.element_type = "none"
 			bullet.damage = 7.5
 			if "splits" in bullet:
@@ -150,7 +137,7 @@ func _apply_ability_modifier(bullet: Node2D) -> void:
 		"chilli":
 			bullet.element_type = "fire"
 			bullet.damage = 25.0
-		"walnut":
+		"onion":
 			bullet.element_type = "none"
 			bullet.damage = 15.0
 			if "stun_chance" in bullet:
@@ -158,9 +145,9 @@ func _apply_ability_modifier(bullet: Node2D) -> void:
 		"potato":
 			bullet.element_type = "earth"
 			bullet.damage = 25.0
-		"corn", _:
+		"normal", _:
 			bullet.element_type = "none"
-			bullet.damage = 35.0
+			bullet.damage = 15.0
 
 func take_damage(amount: float) -> void:
 
@@ -184,12 +171,6 @@ func take_damage(amount: float) -> void:
 
 	if health <= 0:
 		die()
-func increaseMaxHealth(i):
-	health += i
-	max_health += i
-	
-func increaseSpeed(i):
-	SPEED += i
 
 func die() -> void:
 	get_tree().current_scene._notify("GAME OVER! Player died!")

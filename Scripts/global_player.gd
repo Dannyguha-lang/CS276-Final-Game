@@ -4,6 +4,8 @@ var fishing_stats:Dictionary = {"Harvest Speed":1.0,"Harvest Luck":1.0}
 var farming_stats:Dictionary = {"Fishing Speed":1.0,"Fishing Luck":1.0,"Equipment Luck":0.05}
 var current_health:float = 0.00
 var equipped_weapon = "None"
+var saved_position: Vector2 = Vector2.ZERO
+var has_saved_position: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func takeDamage(num:int):
