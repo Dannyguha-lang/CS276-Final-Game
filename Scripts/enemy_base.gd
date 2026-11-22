@@ -11,6 +11,7 @@ signal died(enemy: EnemyBase)
 @export var repath_cooldown := 0.5
 var health: float
 var target: Node2D
+var stun_time: float = 0.0
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @onready var attack_timer: Timer = $AttackTimer
@@ -43,6 +44,13 @@ func attack():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if stun_time > 0.0:
+		stun_time -= delta
+		velocity = Vector2.ZERO
+		if stun_time <= 0.0:
+			modulate = Color.WHITE
+		return
+		
 	if not nav_ready or not is_instance_valid(target):
 		pass
 	behave()
@@ -73,7 +81,18 @@ func takeDamage(amount: float, attack_element := "none") -> void:
 	health -= amount * Elements.attackMultiplier(attack_element, element) 
 	if health <= 0.0:
 		die()
-
+		
+func apply_knockback(force: Vector2) -> void:
+	print("knocked back", force)
+	velocity = force
+	move_and_slide()
+	get_tree().create_timer(0.2).timeout.connect(func(): velocity = Vector2.ZERO)
+	
+func apply_stun(duration: float) -> void:
+	stun_time = duration
+	velocity = Vector2.ZERO
+	modulate = Color(1.0, 0.9, 0.3) 
+	
 func die() -> void:
 	died.emit(self)
 	queue_free()
