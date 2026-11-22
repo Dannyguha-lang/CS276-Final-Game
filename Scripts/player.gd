@@ -149,7 +149,7 @@ func _apply_ability_modifier(bullet: Node2D) -> void:
 			bullet.element_type = "none"
 			bullet.damage = 15.0
 
-func take_damage(amount: float) -> void:
+func take_damage(amount: float,element:String) -> void:
 
 	health = max(health - amount, 0.0)
 

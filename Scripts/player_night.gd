@@ -153,8 +153,7 @@ func _apply_ability_modifier(bullet: Node2D) -> void:
 			bullet.element_type = "none"
 			bullet.damage = 15.0
 
-func take_damage(amount: float) -> void:
-
+func takeDamage(amount: float,element:String) -> void:
 	health = max(health - amount, 0.0)
 
 	var message = "OUCH! -%d HP  |  HP: %d/%d" % [
@@ -163,7 +162,7 @@ func take_damage(amount: float) -> void:
 		int(max_health)
 	]
 
-	get_tree().current_scene._notify(message)
+	#get_tree().current_scene._notify(message)
 
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
