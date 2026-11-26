@@ -37,10 +37,19 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Start"
 
-[node name="Difficulty" type="Button" parent="Menu/MarginContainer/VBoxContainer" unique_id=1547987305]
-custom_minimum_size = Vector2(0, 40)
+[node name="Difficulty" type="OptionButton" parent="Menu/MarginContainer/VBoxContainer" unique_id=1453451742]
 layout_mode = 2
-text = "Set Difficulty"
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Normal"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
+popup/item_3/text = "Hardcore"
+popup/item_3/id = 3
 
 [node name="Quit" type="Button" parent="Menu/MarginContainer/VBoxContainer" unique_id=270881799]
 custom_minimum_size = Vector2(0, 40)

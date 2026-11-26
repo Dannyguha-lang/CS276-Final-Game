@@ -10,7 +10,10 @@
 [ext_resource type="Script" uid="uid://dxbm6qk22feaq" path="res://Scripts/inventory_item_view.gd" id="5_3fw17"]
 [ext_resource type="Script" uid="uid://bjwcmpmn1hjwl" path="res://Scripts/fisherman.gd" id="6_3fw17"]
 [ext_resource type="Script" uid="uid://do4yvhkau0res" path="res://Scripts/shopkeeper.gd" id="7_3fw17"]
+[ext_resource type="Texture2D" uid="uid://ds3wb5pcwgnmp" path="res://Tile Sets/Water+.png" id="7_7ys1n"]
 [ext_resource type="Script" uid="uid://dufkvihhk7sjo" path="res://Scripts/seed_buttons_day.gd" id="7_lvtp1"]
+[ext_resource type="Texture2D" uid="uid://mot4yh2rkaoq" path="res://Art/enemies/fish.png" id="8_7ys1n"]
+[ext_resource type="Texture2D" uid="uid://bhk7epcd4haaw" path="res://Tile Sets/global.png" id="8_cndmr"]
 [ext_resource type="Texture2D" uid="uid://gflfcelfj2xu" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/01_tomato/tomato_produce_normal.png" id="8_ouyqe"]
 [ext_resource type="Texture2D" uid="uid://dmdvspiwqcm3g" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/02_cucumber/cucumber_produce_normal.png" id="9_lvtp1"]
 [ext_resource type="Texture2D" uid="uid://cqddga5cppvxi" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/04_corn/corn_produce_normal.png" id="10_mfjfk"]
@@ -22,6 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://wf10r5ln6qef" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/17_carrot/carrot_produce_normal.png" id="16_cndmr"]
 [ext_resource type="Script" uid="uid://dho0d6f4v6x77" path="res://Scripts/player_day.gd" id="19_nhfe3"]
 [ext_resource type="Texture2D" uid="uid://d23h68fu14opa" path="res://Art/farmer.png" id="20_x3w7q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp0df"]
+atlas = ExtResource("7_7ys1n")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvtp1"]
 
@@ -145,10 +152,16 @@ layout_mode = 2
 
 [node name="Background" type="TextureRect" parent="UI/UIRoot/FishingMinigame" unique_id=618396759]
 layout_mode = 2
+texture = SubResource("AtlasTexture_kp0df")
 
 [node name="Shadow" type="Sprite2D" parent="UI/UIRoot/FishingMinigame/Background" unique_id=659406001]
+texture = ExtResource("8_7ys1n")
+region_rect = Rect2(48, 48, 16, 16)
 
 [node name="Bobber" type="Sprite2D" parent="UI/UIRoot/FishingMinigame/Background" unique_id=34577300]
+texture = ExtResource("8_cndmr")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 16)
 
 [node name="ResultContainer" type="PanelContainer" parent="UI/UIRoot/FishingMinigame" unique_id=1299947524]
 layout_mode = 2

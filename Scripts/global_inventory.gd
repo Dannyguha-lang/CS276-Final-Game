@@ -82,7 +82,7 @@ func spawnLoot():
 		var pool = ["tomato","cucumber","corn","pumpkin","onion","chilli","radish","potato","carrot"]
 		rng = randi_range(0,len(pool)-1)
 		var loot = pool[rng]
-		seeds[loot] += 1
+		addSeeds(loot,1)
 	rng = randi_range(0,3)
 	updateCoins(rng)
 		

@@ -4,7 +4,7 @@ extends Node2D
 
 func _ready() -> void:
 	timer.one_shot = true
-	timer.wait_time = 5
+	timer.wait_time = 500
 	timer.timeout.connect(turnNight)
 	timer.start()
 

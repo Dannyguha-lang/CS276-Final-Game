@@ -12,6 +12,7 @@ func ExpandCollapse():
 	if collapsed:
 		for type in Inventory.ammo:
 			var node = get_node(type)
+			node.get_child(0).get_child(1).text = str(Inventory.seeds[type])
 			if Inventory.seeds[type] <= 0:
 				node.disabled = true
 			else:
@@ -23,6 +24,7 @@ func ExpandCollapse():
 	else:
 		for type in Inventory.ammo:
 			var node = get_node(type)
+			node.get_child(0).get_child(1).text = str(Inventory.seeds[type])
 			if Inventory.seeds[type] <= 0:
 				node.disabled = true
 			else:
