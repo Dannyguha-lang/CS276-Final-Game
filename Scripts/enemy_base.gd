@@ -9,6 +9,8 @@ signal died(enemy: EnemyBase)
 @export var attack_cooldown := 0.5
 @export var attack_range := 5
 @export var repath_cooldown := 0.5
+@export var projectile_scene: PackedScene
+@export var projectile_speed = 300
 var health: float
 var target: Node2D
 var stun_time: float = 0.0
@@ -23,11 +25,7 @@ func _ready() -> void:
 	add_to_group("enemies")     
 	health = max_health
 	target = get_tree().get_first_node_in_group("player")
-	setBase()
 	
-	
-func setBase():
-	attack_timer.stop()
 	attack_timer.one_shot = true
 	attack_timer.wait_time = attack_cooldown
 	attack_timer.start()
@@ -36,11 +34,30 @@ func setBase():
 	
 	nav.path_desired_distance = 8.0
 	nav.target_desired_distance = attack_range
+	
 	nav_ready = true
+func setAttackTimer():
+	attack_timer.one_shot = true
+	attack_timer.wait_time = attack_cooldown
 func attack():
 	if target and attack_timer.is_stopped():
-		target.takeDamage(damage,element)
+		if projectile_scene:
+			shoot()
+		else:
+			target.takeDamage(damage,element)
 		attack_timer.start()
+		
+func shoot():
+	var projectile = projectile_scene.instantiate()
+	
+	get_tree().current_scene.add_child(projectile)
+	
+	projectile.global_position = global_position
+	projectile.direction = global_position.direction_to(target.global_position)
+	projectile.speed = projectile_speed
+	projectile.damage = damage
+	projectile.element = element
+	print("projectile ", projectile.direction, " ", projectile_speed )
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -69,7 +86,6 @@ func move_toward_target() -> void:
 	move_and_slide()
 
 func behave() -> void:
-
 	if not target:
 		pass
 	elif global_position.distance_to(target.global_position) <= attack_range:
@@ -97,4 +113,3 @@ func apply_stun(duration: float) -> void:
 func die() -> void:
 	died.emit(self)
 	queue_free()
-	Inventory.spawnLoot()

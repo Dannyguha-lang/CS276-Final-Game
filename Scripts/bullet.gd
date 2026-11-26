@@ -76,8 +76,8 @@ func _trigger_aoe_explosion() -> void:
 	var results = space_state.intersect_shape(query)
 	for hit in results:
 		var target = hit.collider
-		if target.is_in_group("enemies") and target.has_method("take_damage"):
-			target.take_damage(damage * 0.5, element_type) 
+		if target.is_in_group("enemies") and target.has_method("takeDamage"):
+			target.takeDamage(damage * 0.5, element_type) 
 
 # Corn ability
 func _trigger_seed_split() -> void:

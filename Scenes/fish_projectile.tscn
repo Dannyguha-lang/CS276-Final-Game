@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ray6gpa7abe5"]
+
+[ext_resource type="Script" uid="uid://phhugde5hp8e" path="res://Scripts/projectile.gd" id="1_n5ph8"]
+[ext_resource type="Texture2D" uid="uid://d2vfc27slk841" path="res://Art/cozy_harvest_crops_pack_v1.1/individual_crops_16.16/20_Cactus_Fruit/cactus_fruit_growth_stage_1.png" id="2_n5ph8"]
+
+[node name="FishProjectile" type="Area2D" unique_id=1561469473]
+script = ExtResource("1_n5ph8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=886720859]
+texture = ExtResource("2_n5ph8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=284250028]

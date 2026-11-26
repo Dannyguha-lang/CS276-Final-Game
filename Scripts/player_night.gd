@@ -87,8 +87,6 @@ func shoot() -> void:
 			#get_tree().current_scene._notify("Out of %s ammo!" % Inventory.selected_ammo)
 			return
 
-	var game = get_tree().current_scene
-
 	fire_cooldown = fire_rate
 
 	var bullet = bullet_scene.instantiate()
@@ -97,7 +95,7 @@ func shoot() -> void:
 
 	var target_dir = (get_global_mouse_position() - global_position).normalized()
 
-	game.add_child(bullet)
+	get_tree().current_scene.add_child(bullet)
 
 	bullet.global_position = global_position
 	bullet.direction = target_dir
@@ -130,12 +128,12 @@ func _apply_ability_modifier(bullet: Node2D) -> void:
 			bullet.damage = 25.0
 		"tomato":
 			bullet.element_type = "none"
-			bullet.damage = 12.5
+			bullet.damage = 10.0
 			if "aoe" in bullet:
 				bullet.aoe = true
 		"corn":
 			bullet.element_type = "none"
-			bullet.damage = 7.5
+			bullet.damage = 12.5
 			if "splits" in bullet:
 				bullet.splits = true
 		"chilli":
@@ -151,7 +149,7 @@ func _apply_ability_modifier(bullet: Node2D) -> void:
 			bullet.damage = 25.0
 		"None", _:
 			bullet.element_type = "none"
-			bullet.damage = 15.0
+			bullet.damage = 25.0
 
 func takeDamage(amount: float,element:String) -> void:
 	health = max(health - amount, 0.0)

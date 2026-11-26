@@ -10,7 +10,6 @@ var mob_spawn_rate_multiplier = 1.0
 
 
 func setDifficulty(new_dif):
-	print(new_dif)
 	match new_dif:
 		"Easy":
 			difficulty = "Easy"
