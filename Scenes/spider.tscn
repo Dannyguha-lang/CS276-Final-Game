@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://wqxembg12gnu"]
+
+[ext_resource type="Script" uid="uid://jmicl2fd75ei" path="res://Scripts/spider.gd" id="1_gedd4"]
+[ext_resource type="PackedScene" uid="uid://5nvdnmcubeek" path="res://Scenes/spider_projectile.tscn" id="2_sbdki"]
+
+[node name="Spider" type="CharacterBody2D" unique_id=778856118]
+script = ExtResource("1_gedd4")
+projectile_scene = ExtResource("2_sbdki")
+
+[node name="Spider Sprite" type="Sprite2D" parent="." unique_id=509119856]
+
+[node name="Spider Collision" type="CollisionShape2D" parent="." unique_id=1146654164]
+
+[node name="Detection Area" type="Area2D" parent="." unique_id=1165488457]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area" unique_id=1881748910]

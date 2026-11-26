@@ -7,4 +7,8 @@ func _ready() -> void:
 	attack_range = 1000
 	attack_cooldown = 2.0
 	element = "water"
+	projectile_scene = preload("res://Scenes/fish_projectile.tscn")
 	super()  
+	
+func behave() -> void:
+	velocity = Vector2.ZERO

@@ -11,32 +11,6 @@ func _ready() -> void:
 	spawn_timer.wait_time = spawn_time
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	
-	if enemy_base == null:
-		push_error("EnemySpawner: enemy_base is not assigned in the Inspector!")
-		return
-		
-	var test_bug = enemy_base.instantiate()
-	
-	# Verify script path exists before loading
-	var script_path := "res://scripts/ladybug.gd" # <-- Update if in a different folder
-	if ResourceLoader.exists(script_path):
-		test_bug.set_script(load(script_path))
-	else:
-		push_error("Could not find script at: " + script_path)
-		
-	add_child(test_bug)
-	
-	# Verify image path exists and apply to Sprite2D
-	var img_path := "res://Art/enemies/ladybird.png" # <-- Check if named ladybird.png or ladybug.png
-	var sprite := test_bug.get_node_or_null("Sprite2D")
-	if sprite and ResourceLoader.exists(img_path):
-		sprite.texture = load(img_path)
-	else:
-		push_error("Sprite2D missing or image not found at: " + img_path)
-		
-	test_bug.global_position = Vector2(512, 512)
-	print("Spawned test ladybug at: ", test_bug.global_position)
-	
 func startTimer():
 	spawn_timer.start()
 
